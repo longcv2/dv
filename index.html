@@ -1,0 +1,2557 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VISTA Travel — Tour, phòng & trải nghiệm | Booking & QR</title>
+<meta name="description" content="VISTA Travel - đặt tour, phòng nghỉ và trải nghiệm du lịch.">
+<meta name="keywords" content="du lịch, tour, khách sạn, đặt phòng, booking, VISTA Travel">
+<meta name="theme-color" content="#092238">
+<style>
+:root{--navy:#092238;--navy2:#123c59;--gold:#d8b36a;--cream:#f7f3eb;--ink:#18242d;--muted:#73808a;--white:#fff;--line:#e4e8eb;--ok:#2e8b57;--danger:#b64040;--shadow:0 18px 55px #09223818}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:#fff}button,input,select,textarea{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}.container{width:min(1180px,92%);margin:auto}.hidden{display:none!important}
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:color-mix(in srgb, var(--navy) 91%, transparent);backdrop-filter:blur(12px);color:#fff}.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:900;letter-spacing:3px;font-size:24px}.logo i{color:var(--gold);font-style:normal}.menu{display:flex;gap:25px;font-size:14px;font-weight:700}.menu a:hover{color:var(--gold)}.nav-actions{display:flex;gap:9px}.btn{border:0;border-radius:12px;padding:12px 17px;font-weight:800}.gold{background:var(--gold);color:var(--navy)}.darkbtn{background:#ffffff16;border:1px solid #ffffff3d;color:#fff}.mobile-menu{display:none}
+.hero{min-height:720px;padding-top:72px;display:flex;align-items:center;color:#fff;background:linear-gradient(90deg,#061522e9,#06152260),url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2200&q=85") center/cover}.hero-copy{max-width:760px}.eyebrow{color:var(--gold);font-size:12px;letter-spacing:3px;font-weight:900;text-transform:uppercase}.hero h1{font-size:clamp(48px,7vw,88px);line-height:.96;letter-spacing:-4px;margin:17px 0}.hero p{font-size:18px;line-height:1.7;max-width:650px;color:#eaf0f3}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.search-wrap{margin-top:-55px;position:relative;z-index:10}.searchbox{background:#fff;padding:10px;border-radius:22px;box-shadow:var(--shadow);display:grid;grid-template-columns:1.3fr 1fr 1fr .8fr auto;gap:5px}.field{padding:12px 14px;border-right:1px solid var(--line)}.field label{display:block;color:var(--muted);font-size:10px;font-weight:900;margin-bottom:6px}.field input,.field select{border:0;outline:0;width:100%;font-weight:700;color:var(--ink);background:transparent}
+section{padding:95px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:30px}.head h2{font-size:42px;letter-spacing:-2px;margin:8px 0}.head p{max-width:520px;color:var(--muted);line-height:1.7}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;transition:.25s}.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.photo{height:220px;background-size:cover;background-position:center}.body{padding:20px}.tag{display:inline-block;background:#f2eadc;color:#896a32;border-radius:20px;padding:6px 10px;font-size:10px;font-weight:900}.body h3{font-size:20px;margin:11px 0 7px}.muted{color:var(--muted);font-size:13px}.price{display:flex;justify-content:space-between;align-items:center;margin-top:18px}.price b{color:var(--navy);font-size:19px}
+.dark{background:var(--navy);color:#fff}.experience{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.expimg{min-height:500px;border-radius:28px;background:url("https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1200&q=85") center/cover}.feature{display:flex;gap:14px;margin-top:24px}.num{width:39px;height:39px;border:1px solid #fff3;border-radius:50%;display:grid;place-items:center;color:var(--gold);font-weight:900;flex:none}.feature p{color:#b9c6cf;line-height:1.6;margin:5px 0}
+.cream{background:var(--cream)}.quote{text-align:center;max-width:800px;margin:auto}.quote p{font-size:31px;line-height:1.4;font-weight:800}.quote small{color:var(--muted)}
+footer{background:#061522;color:#b9c6cf;padding:55px 0}.foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px}.foot h4{color:#fff}.foot p{line-height:1.8}.bottom{border-top:1px solid #fff2;margin-top:35px;padding-top:20px;display:flex;justify-content:space-between;font-size:12px}
+.float-admin{display:none!important;visibility:hidden!important;pointer-events:none!important}
+.modal{position:fixed;inset:0;background:#061522aa;backdrop-filter:blur(5px);z-index:200;display:flex;align-items:center;justify-content:center;padding:18px}.modalbox{background:#fff;width:min(760px,100%);max-height:92vh;overflow:auto;border-radius:22px;padding:25px;box-shadow:0 30px 100px #0005}.modalhead{display:flex;justify-content:space-between;align-items:center}.x{border:0;background:#f0f2f3;border-radius:50%;width:36px;height:36px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.formfield{display:flex;flex-direction:column;gap:6px}.formfield.full{grid-column:1/-1}.formfield label{font-size:12px;font-weight:900;color:#58656e}.formfield input,.formfield select,.formfield textarea{padding:12px;border:1px solid var(--line);border-radius:10px;outline:0}.summary{background:var(--cream);padding:15px;border-radius:14px;margin:15px 0}.qr{width:220px;height:220px;object-fit:contain;border:1px solid var(--line);border-radius:14px;background:#fff}.paybox{text-align:center}.paybox .bank{line-height:1.8}.notice{padding:12px;border-radius:10px;background:#fff6df;color:#805f20;font-size:13px}
+.admin-screen{display:none;min-height:100vh;background:#f4f6f8}.admin-screen.active{display:block}.admin-layout{display:grid;grid-template-columns:240px 1fr;min-height:100vh}.sidebar{background:var(--navy);color:#fff;padding:22px 15px}.sidebar .navitem{display:block;padding:12px 13px;border-radius:10px;margin:4px 0;color:#bdc8d0;font-weight:700;cursor:pointer}.sidebar .navitem.active,.sidebar .navitem:hover{background:#ffffff13;color:#fff}.admin-main{padding:28px;max-width:1400px;width:100%}.admin-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px}.stat small{color:var(--muted)}.stat strong{display:block;font-size:27px;margin-top:8px}.panel{background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px;margin-top:18px}.panelhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;padding:12px 8px;border-bottom:1px solid #edf0f2;font-size:13px}.badge{display:inline-block;padding:5px 9px;border-radius:20px;background:#e9f6ee;color:#287245;font-size:11px;font-weight:900}.badge.wait{background:#fff3d8;color:#8b651e}.badge.cancel{background:#fceaea;color:#a43d3d}.admin-form{max-width:700px}.save{margin-top:14px}.smallhelp{color:var(--muted);font-size:12px;line-height:1.6}.previewqr{width:180px;margin-top:10px;border-radius:10px;border:1px solid var(--line)}
+.toast{position:fixed;right:18px;top:88px;z-index:500;background:var(--navy);color:#fff;padding:13px 17px;border-radius:12px;box-shadow:var(--shadow);display:none}.toast.show{display:block}
+@media(max-width:850px){.menu{display:none}.mobile-menu{display:block;background:transparent;border:0;color:#fff;font-size:24px}.searchbox{grid-template-columns:1fr 1fr}.searchbox .field{border-right:0;border-bottom:1px solid var(--line)}.searchbox .btn{grid-column:1/-1}.grid{grid-template-columns:1fr}.experience{grid-template-columns:1fr}.expimg{min-height:360px}.head{display:block}.head h2{font-size:34px}.foot{grid-template-columns:1fr 1fr}.admin-layout{grid-template-columns:70px 1fr}.sidebar .logo{font-size:0}.sidebar .logo:first-letter{font-size:24px}.sidebar .navitem{font-size:0}.sidebar .navitem:first-letter{font-size:18px}.stats{grid-template-columns:1fr 1fr}.tablewrap{overflow:auto}.table{min-width:700px}}
+@media(max-width:520px){section{padding:70px 0}.hero{min-height:650px}.hero h1{letter-spacing:-2px}.hero p{font-size:16px}.searchbox{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.formfield.full{grid-column:auto}.foot{grid-template-columns:1fr}.bottom{display:block}.bottom span{display:block;margin-top:8px}}
+
+.admin-login{position:fixed;inset:0;z-index:9999;background:rgba(5,20,32,.88);display:flex;align-items:center;justify-content:center;padding:20px}
+.admin-login.hidden{display:none}
+.login-box{width:min(420px,100%);background:#fff;border-radius:24px;padding:30px;box-shadow:0 25px 80px rgba(0,0,0,.3)}
+.login-box .logo{font-size:30px;font-weight:900;color:var(--navy);margin-bottom:8px}
+.login-box .logo i{color:var(--gold);font-style:normal}
+.login-box h2{margin:0 0 8px;font-size:26px}
+.login-box p{margin:0 0 22px;color:var(--muted)}
+.login-box input{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:12px;outline:none;margin-bottom:12px}
+.login-box input:focus{border-color:var(--gold)}
+.login-error{color:#b64040;font-size:14px;min-height:20px;margin-bottom:8px}
+
+/* ===== ADMIN DRAWER / MOBILE UI ===== */
+.admin-screen{background:#f4f7fa}
+.admin-layout{display:block;min-height:100vh}
+.sidebar{
+  position:fixed;left:0;top:0;bottom:0;z-index:500;
+  width:310px;max-width:88vw;padding:18px 14px;
+  background:linear-gradient(180deg,#06243b 0%,#082d49 55%,#061f35 100%);
+  box-shadow:18px 0 45px rgba(0,0,0,.18);
+  overflow-y:auto;overflow-x:hidden;
+}
+.sidebar-brand{display:flex;align-items:center;gap:11px;padding:6px 8px 18px;border-bottom:1px solid rgba(255,255,255,.09)}
+.brand-mark{width:43px;height:43px;border-radius:13px;background:linear-gradient(135deg,#1592ff,#4ac4ff);display:grid;place-items:center;font-size:25px;font-weight:900;color:#fff}
+.brand-name{font-size:18px;font-weight:900;color:#fff;line-height:1.1}
+.brand-name span{color:#4aaeff}
+.brand-sub{font-size:11px;color:#a9bfce;margin-top:4px}
+.drawer-close{margin-left:auto;border:0;background:transparent;color:#fff;font-size:29px;line-height:1;cursor:pointer}
+.admin-user{display:flex;align-items:center;gap:10px;padding:14px 9px;margin-bottom:10px;color:#fff}
+.admin-user .avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#197cf0;color:#fff;font-size:18px;box-shadow:0 0 0 4px rgba(25,124,240,.15)}
+.admin-user b{display:block;font-size:15px}
+.admin-user small{display:block;color:#65e29b;font-size:11px;margin-top:3px}
+.admin-user>span{margin-left:auto;color:#bcd0de}
+.nav-section{display:flex;flex-direction:column;gap:4px}
+.sidebar .navitem{
+  display:flex!important;align-items:center;gap:13px;
+  min-height:50px;padding:10px 12px!important;margin:0!important;
+  border-radius:12px;color:#d7e3eb!important;font-weight:700!important;
+  font-size:14px!important;cursor:pointer;transition:.18s;
+}
+.sidebar .navitem:hover{background:rgba(255,255,255,.08)!important}
+.sidebar .navitem.active{background:linear-gradient(90deg,#197cf0,#258cff)!important;color:#fff!important;box-shadow:0 7px 18px rgba(25,124,240,.24)}
+.sidebar .navitem>b{margin-left:auto;font-size:21px;font-weight:400;color:#dceaf3}
+.navicon{width:26px;text-align:center;font-size:21px;flex:0 0 26px}
+.nav-sub{
+  background:rgba(25,102,163,.28);border-radius:12px;margin:0 0 6px 13px;padding:5px 7px;
+}
+.nav-sub button{
+  width:100%;border:0;background:transparent;color:#d5e5ef;text-align:left;
+  padding:9px 8px;border-radius:8px;font:600 12px inherit;cursor:pointer;
+}
+.nav-sub button:hover{background:rgba(255,255,255,.07)}
+.sidebar-bottom{border-top:1px solid rgba(255,255,255,.09);margin-top:10px;padding-top:8px}
+.logout-item{color:#ffcfca!important}
+.sidebar-promo{
+  margin:12px 2px 4px;padding:18px 14px;border-radius:14px;
+  min-height:130px;background:
+  linear-gradient(135deg,rgba(8,35,57,.72),rgba(14,88,131,.4)),
+  radial-gradient(circle at 80% 20%,rgba(76,174,255,.5),transparent 38%);
+  border:1px solid rgba(255,255,255,.08);
+}
+.promo-title{font-size:20px;font-weight:900;color:#fff}
+.promo-text{font-family:Georgia,serif;font-style:italic;color:#dcebf4;margin-top:18px;line-height:1.45}
+.sidebar-overlay{display:none}
+.admin-main{margin-left:310px;min-height:100vh;padding:30px;max-width:none}
+.admin-top{position:sticky;top:0;z-index:20;background:rgba(244,247,250,.94);backdrop-filter:blur(10px);padding:8px 0 18px}
+.admin-menu-btn{display:none}
+@media(max-width:900px){
+  .sidebar{transform:translateX(-105%);transition:transform .25s ease}
+  .sidebar.open{transform:translateX(0)}
+  .sidebar-overlay{position:fixed;inset:0;z-index:490;background:rgba(0,0,0,.46);backdrop-filter:blur(2px)}
+  .sidebar-overlay.open{display:block}
+  .admin-main{margin-left:0;padding:76px 16px 28px}
+  .admin-menu-btn{
+    display:flex;position:fixed;left:14px;top:14px;z-index:450;
+    width:48px;height:48px;border:0;border-radius:14px;background:#092238;color:#fff;
+    align-items:center;justify-content:center;font-size:25px;box-shadow:0 8px 22px rgba(0,0,0,.18);cursor:pointer
+  }
+  .admin-top{padding-top:0}
+  .admin-top h1{font-size:30px}
+  .stats{grid-template-columns:1fr 1fr}
+  .panel{overflow:hidden}
+}
+@media(max-width:520px){
+  .stats{grid-template-columns:1fr 1fr;gap:10px}
+  .stat{padding:15px;border-radius:14px}
+  .stat strong{font-size:24px}
+  .admin-top{align-items:flex-start}
+  .admin-top>div:last-child{display:none!important}
+  .tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
+
+/* Booking pagination */
+.booking-pages{display:flex;justify-content:center;align-items:center;gap:7px;padding:16px 8px;flex-wrap:wrap}
+.booking-pages button{min-width:40px;height:40px;border:1px solid #dbe3e9;background:#fff;color:#183044;border-radius:10px;font-weight:800;cursor:pointer}
+.booking-pages button:hover{border-color:#2388ef}
+.booking-pages button.active{background:#197cf0;color:#fff;border-color:#197cf0}
+.booking-pages button:disabled{opacity:.45;cursor:not-allowed}
+.page-info{font-size:12px;color:#73808a;margin:0 6px}
+@media(max-width:520px){
+  .booking-pages button{min-width:36px;height:36px}
+}
+
+.website-name-setting input:focus{border-color:#2388ef;box-shadow:0 0 0 3px rgba(35,136,239,.10)}
+
+.admin-tab textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:12px;outline:none;resize:vertical;font:inherit}
+.admin-tab input:focus,.admin-tab textarea:focus{border-color:#2388ef;box-shadow:0 0 0 3px rgba(35,136,239,.10)}
+
+.nav-divider{padding:13px 10px 5px;color:#6f91a7;font-size:9px;font-weight:900;letter-spacing:1.1px}
+.nav-divider span{opacity:.9}
+
+.service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:18px}
+.service-admin-card{padding:18px;border:1px solid var(--line);border-radius:15px;background:#fff;display:flex;flex-direction:column;gap:8px}
+.service-admin-card b{font-size:15px}.service-admin-card span{font-weight:900;color:#0b5e99}.service-admin-card small{color:var(--muted)}
+.empty-state{padding:45px 20px;text-align:center;color:var(--muted)}
+@media(max-width:700px){.service-grid{grid-template-columns:1fr}}
+
+/* Revenue chart */
+.revenue-panel{margin-top:18px;overflow:hidden}
+.revenue-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 22px 8px}
+.revenue-title{display:flex;align-items:center;gap:10px}
+.revenue-title .chart-icon{width:34px;height:34px;border-radius:10px;background:#eaf4ff;color:#197cf0;display:grid;place-items:center;font-weight:900}
+.revenue-title h3{margin:0;font-size:18px}
+.revenue-filter{border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 12px;font-weight:700;color:#33495a;outline:none}
+.revenue-total{padding:0 22px 4px;font-size:27px;font-weight:900;color:#102738}
+.revenue-sub{padding:0 22px 12px;font-size:12px;color:#36a86a;font-weight:800}
+.revenue-chart-wrap{padding:0 18px 18px}
+.revenue-svg{width:100%;height:250px;display:block}
+.revenue-tooltip{position:absolute;display:none;background:#102d43;color:#fff;padding:8px 10px;border-radius:9px;font-size:12px;font-weight:800;pointer-events:none;white-space:nowrap;z-index:4;box-shadow:0 8px 22px rgba(0,0,0,.15)}
+.revenue-chart-area{position:relative}
+@media(max-width:600px){
+ .revenue-head{padding:17px 16px 7px}
+ .revenue-total{padding-left:16px;font-size:23px}
+ .revenue-sub{padding-left:16px}
+ .revenue-chart-wrap{padding:0 8px 12px}
+ .revenue-svg{height:225px}
+}
+
+/* Reviews */
+.review-stars{color:#e6a23c;letter-spacing:1px;font-size:15px}
+.review-card{border:1px solid var(--line);border-radius:20px;padding:22px;background:#fff;display:flex;flex-direction:column;gap:10px}
+.review-card .who{display:flex;align-items:center;gap:12px;margin-top:8px}
+.review-card .avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#197cf0,#4ac4ff);color:#fff;display:grid;place-items:center;font-weight:900}
+.review-card p{line-height:1.65;color:#33495a;margin:0}
+.review-meta{color:var(--muted);font-size:12px}
+.review-card .review-img{width:100%;height:180px;object-fit:cover;border-radius:14px;background:#f0f2f4;margin-top:4px}
+.review-form-box{background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:22px;margin-bottom:28px}
+.review-form-box h3{margin:0 0 6px;font-size:20px}
+.review-form-box .formgrid{margin-top:14px}
+.review-preview-wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.review-preview-wrap img{width:120px;height:90px;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:none}
+.review-preview-wrap img.show{display:block}
+.review-file-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 14px;border:1px dashed #b8c4ce;border-radius:12px;background:#fff;cursor:pointer;font-weight:700;color:#33495a}
+.review-file-btn input{display:none}
+.star-pick{display:flex;gap:4px}
+.star-pick button{border:0;background:transparent;font-size:22px;cursor:pointer;color:#d0d5da;line-height:1;padding:0}
+.star-pick button.on{color:#e6a23c}
+.admin-stars-select{display:flex;gap:6px;align-items:center}
+.admin-stars-select button{border:1px solid var(--line);background:#fff;border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:16px}
+.admin-stars-select button.on{background:#fff6df;border-color:#e6a23c}
+.review-admin-thumb{width:56px;height:42px;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
+
+
+/* Booking detail + history + payments */
+.booking-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin-top:12px}
+.booking-detail-grid .full{grid-column:1/-1}
+.booking-detail-grid label{display:block;font-size:11px;font-weight:900;color:var(--muted);margin-bottom:3px}
+.booking-detail-grid div>span,.booking-detail-grid div>b{font-size:14px}
+.hist-box{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;margin-bottom:22px}
+.hist-results{display:flex;flex-direction:column;gap:12px}
+.hist-item{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fafbfc}
+.hist-item.pending{border-color:#e6b84a;background:#fffbf0;box-shadow:0 0 0 1px #f5e0a8}
+.hist-item .pay-info{margin-top:10px;padding:10px 12px;background:#fff;border-radius:10px;border:1px dashed #e0c56a;font-size:13px;line-height:1.6}
+.hist-item .top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+.pay-queue-stat{display:inline-block;background:#fff3d8;color:#8b651e;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:800;margin-left:8px}
+@media(max-width:600px){.booking-detail-grid{grid-template-columns:1fr}}
+
+
+.hist-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.hist-tabs button{border:0;background:transparent;padding:10px 14px;border-radius:10px;font-weight:800;color:var(--muted);cursor:pointer}
+.hist-tabs button.active{background:var(--navy);color:#fff}
+.color-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;padding:8px 0}
+.color-item{display:flex;flex-direction:column;gap:8px;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.color-item label{font-size:12px;font-weight:800;color:#33495a}
+.color-item input[type=color]{width:100%;height:42px;border:1px solid var(--line);border-radius:8px;padding:2px;background:#fff;cursor:pointer}
+.theme-preview{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.theme-preview span{width:28px;height:28px;border-radius:8px;border:1px solid #0001}
+
+
+.history-screen{display:none;min-height:100vh;background:var(--cream)}
+.history-screen.active{display:block}
+.history-header{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--navy) 94%, transparent);backdrop-filter:blur(12px);color:#fff}
+.history-body{padding:40px 0 80px}
+
+
+.color-item small{display:block;font-weight:500;color:var(--muted);font-size:11px;line-height:1.45;margin-top:2px}
+.user-status-ok{color:#287245;font-weight:800}
+.user-status-lock{color:#a43d3d;font-weight:800}
+
+
+.auth-modal .modalbox{width:min(380px,100%);padding:18px}
+.auth-modal .modalhead{margin-bottom:4px}
+.auth-modal .modalhead h2{font-size:20px;margin:0}
+.auth-tabs{display:flex;gap:4px;margin:10px 0 12px;background:#f1f4f6;padding:4px;border-radius:12px}
+.auth-tabs button{flex:1;border:0;background:transparent;padding:9px 8px;border-radius:9px;font-weight:800;font-size:13px;cursor:pointer;color:var(--muted)}
+.auth-tabs button.active{background:#fff;color:var(--navy);box-shadow:0 2px 8px #0001}
+.auth-modal .formfield{margin-bottom:8px}
+.auth-modal .formfield label{font-size:11px;margin-bottom:4px}
+.auth-modal .formfield input{padding:10px 12px}
+.auth-modal .formgrid{gap:8px}
+.user-chip{display:flex;align-items:center;gap:8px;background:#ffffff18;border:1px solid #ffffff3d;border-radius:12px;padding:5px 8px;color:#fff;font-size:12px;font-weight:700}
+.user-chip .u-avatar{width:26px;height:26px;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-weight:900;font-size:11px}
+.btn-ghost{background:transparent;border:1px solid #ffffff55;color:#fff;border-radius:12px;padding:8px 12px;font-weight:800;font-size:13px}
+@media(max-width:850px){
+  .user-chip span.u-name{max-width:72px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+}
+
+</style>
+</head>
+<body>
+
+<div id="site">
+<header><div class="container nav">
+<a class="logo" href="#" onclick="handleLogoClick(event)"><span data-site-name>VISTA Travel</span></a>
+<nav class="menu"><a href="#tour">Tour</a><a href="#phong">Phòng</a><a href="#event">Event</a><a href="javascript:void(0)" onclick="showHistory()">Lịch sử</a><a href="#reviews">Đánh giá</a><a href="#blog">Blog</a></nav>
+<div class="nav-actions">
+  <div id="userAuthArea"></div>
+  <button class="btn gold" onclick="openBooking()">Đặt ngay</button>
+  <button class="mobile-menu" onclick="toggleMobile()">☰</button>
+</div>
+</div></header>
+
+<section class="hero"><div class="container"><div class="hero-copy">
+<div class="eyebrow">Travel differently</div>
+<h1>Đi xa hơn.<br>Nhớ lâu hơn.</h1>
+<p>Khám phá những điểm đến đẹp nhất với tour được tuyển chọn, phòng nghỉ chất lượng và trải nghiệm đáng nhớ.</p>
+<div class="actions"><a class="btn gold" href="#tour">Khám phá tour →</a><a class="btn darkbtn" href="#phong">Tìm phòng</a></div>
+</div></div></section>
+
+<div class="search-wrap"><div class="container"><div class="searchbox">
+<div class="field"><label>ĐIỂM ĐẾN</label><input id="searchDest" placeholder="Đà Nẵng, Phú Quốc..."></div>
+<div class="field"><label>NGÀY ĐI</label><input id="searchFrom" type="date"></div>
+<div class="field"><label>NGÀY VỀ</label><input id="searchTo" type="date"></div>
+<div class="field"><label>SỐ KHÁCH</label><select id="searchGuests"><option>2</option><option>3</option><option>4</option><option>5+</option></select></div>
+<button class="btn gold" onclick="searchTravel()">Tìm kiếm</button>
+</div></div></div>
+
+<section id="tour"><div class="container">
+<div class="head"><div><div class="eyebrow">Curated journeys</div><h2>Những chuyến đi đáng nhớ</h2></div><p>Chọn hành trình phù hợp với thời gian, ngân sách và phong cách của bạn.</p></div>
+<div class="grid">
+<div class="card"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1000&q=85')"></div><div class="body"><span class="tag">BEST SELLER</span><h3>Hạ Long — Di sản biển trời</h3><div class="muted">3 ngày 2 đêm · Du thuyền 5★</div><div class="price"><b>Từ 4.890.000đ</b><button class="btn gold" onclick="openBooking('Hạ Long — Di sản biển trời','4890000','tour',3)">Đặt tour</button></div></div></div>
+<div class="card"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=85')"></div><div class="body"><span class="tag">NATURE</span><h3>Phú Quốc — Nắng vàng & biển xanh</h3><div class="muted">4 ngày 3 đêm · Resort 5★</div><div class="price"><b>Từ 6.290.000đ</b><button class="btn gold" onclick="openBooking('Phú Quốc — Nắng vàng & biển xanh','6290000','tour',4)">Đặt tour</button></div></div></div>
+<div class="card"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1000&q=85')"></div><div class="body"><span class="tag">CULTURE</span><h3>Đà Nẵng — Hội An — Huế</h3><div class="muted">5 ngày 4 đêm · Trải nghiệm bản địa</div><div class="price"><b>Từ 7.490.000đ</b><button class="btn gold" onclick="openBooking('Đà Nẵng — Hội An — Huế','7490000','tour',5)">Đặt tour</button></div></div></div>
+</div></div></section>
+
+<section class="dark" id="trainghiem"><div class="container experience"><div class="expimg"></div><div><div class="eyebrow">Why Vista</div><h2 style="font-size:44px;margin:10px 0 22px">Không chỉ là một chuyến đi.</h2><p style="color:#b9c6cf;line-height:1.8">Lịch trình vừa đủ, nơi ở đẹp, dịch vụ tận tâm và những trải nghiệm khó quên.</p>
+<div class="feature"><div class="num">01</div><div><h3>Lịch trình tinh tuyển</h3><p>Không chạy theo điểm đến, dành thời gian để tận hưởng.</p></div></div>
+<div class="feature"><div class="num">02</div><div><h3>Chỗ ở được chọn kỹ</h3><p>Khách sạn, resort và du thuyền được tuyển chọn.</p></div></div>
+<div class="feature"><div class="num">03</div><div><h3>Hỗ trợ tận tâm</h3><p>Đồng hành trước, trong và sau chuyến đi.</p></div></div>
+</div></div></section>
+
+<section id="phong"><div class="container">
+<div class="head"><div><div class="eyebrow">Stay beautiful</div><h2>Nơi nghỉ cho những ngày chậm lại</h2></div><p>Những lựa chọn lưu trú đẹp, tiện nghi và phù hợp cho kỳ nghỉ của bạn.</p></div>
+<div class="grid">
+<div class="card"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=85')"></div><div class="body"><span class="tag">PHÚ QUỐC</span><h3>Ocean Pearl Resort</h3><div class="muted">★★★★★ · Bãi biển riêng · Ăn sáng</div><div class="price"><b>Từ 2.190.000đ/đêm</b><button class="btn gold" onclick="openBooking('Ocean Pearl Resort','2190000','room',1)">Đặt phòng</button></div></div></div>
+<div class="card"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=1000&q=85')"></div><div class="body"><span class="tag">ĐÀ NẴNG</span><h3>Azure Bay Hotel</h3><div class="muted">★★★★★ · View biển · Hồ bơi</div><div class="price"><b>Từ 1.790.000đ/đêm</b><button class="btn gold" onclick="openBooking('Azure Bay Hotel','1790000','room',1)">Đặt phòng</button></div></div></div>
+<div class="card"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=85')"></div><div class="body"><span class="tag">HÀ NỘI</span><h3>The Heritage House</h3><div class="muted">★★★★★ · Trung tâm · Spa</div><div class="price"><b>Từ 1.490.000đ/đêm</b><button class="btn gold" onclick="openBooking('The Heritage House','1490000','room',1)">Đặt phòng</button></div></div></div>
+</div></div></section>
+
+<section class="cream" id="event"><div class="container"><div class="head"><div><div class="eyebrow">Events</div><h2>Sự kiện & trải nghiệm</h2></div><p>Khám phá những hoạt động đặc biệt đang diễn ra tại các điểm đến.</p></div>
+<div class="grid">
+<div class="card"><div class="body"><span class="tag">20/09/2026</span><h3>Sunset Beach Dinner — Phú Quốc</h3><p class="muted">Bữa tối bên biển, acoustic và cocktail không cồn.</p></div></div>
+<div class="card"><div class="body"><span class="tag">27/09/2026</span><h3>Heritage Walking Tour — Hội An</h3><p class="muted">Khám phá phố cổ cùng hướng dẫn viên địa phương.</p></div></div>
+<div class="card"><div class="body"><span class="tag">05/10/2026</span><h3>Mountain Retreat — Đà Lạt</h3><p class="muted">Cuối tuần chữa lành giữa thiên nhiên và rừng thông.</p></div></div>
+</div></div></section>
+
+<section id="blog"><div class="container"><div class="head"><div><div class="eyebrow">The journal</div><h2>Cảm hứng du lịch</h2></div><p>Kinh nghiệm, lịch trình và những địa điểm đáng khám phá.</p></div>
+<div class="grid">
+<div class="card"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1470214304380-aadaedcfff1b?auto=format&fit=crop&w=1000&q=85')"></div><div class="body"><span class="tag">CẨM NANG</span><h3>48 giờ ở Đà Nẵng: đi đâu, ăn gì?</h3><div class="muted">8 phút đọc</div></div></div>
+<div class="card"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=85')"></div><div class="body"><span class="tag">BIỂN</span><h3>5 bãi biển đẹp cho kỳ nghỉ cuối năm</h3><div class="muted">6 phút đọc</div></div></div>
+<div class="card"><div class="photo" style="background-image:url('https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1000&q=85')"></div><div class="body"><span class="tag">INSPIRATION</span><h3>Du lịch chậm: vì sao ngày càng được yêu thích?</h3><div class="muted">5 phút đọc</div></div></div>
+</div></div></section>
+
+
+
+<section id="reviews"><div class="container">
+<div class="head"><div><div class="eyebrow">Reviews</div><h2>Đánh giá từ khách hàng</h2></div><p>Khách đã đặt tour/phòng có thể gửi đánh giá kèm ảnh trải nghiệm.</p></div>
+
+<div class="review-form-box">
+  <h3>Gửi đánh giá của bạn</h3>
+  <p class="muted" style="margin:0">Nhập <b>mã booking</b> (sau khi đặt dịch vụ) để xác nhận bạn là khách đã đặt.</p>
+  <div class="formgrid">
+    <div class="formfield"><label>MÃ BOOKING *</label><input id="pubRvCode" placeholder="VD: VS-123456" required></div>
+    <div class="formfield"><label>HỌ VÀ TÊN *</label><input id="pubRvName" placeholder="Tên của bạn" required></div>
+    <div class="formfield"><label>SỐ SAO</label>
+      <div class="star-pick" id="pubStarPick">
+        <button type="button" data-s="1" onclick="pickPubStar(1)">★</button>
+        <button type="button" data-s="2" onclick="pickPubStar(2)">★</button>
+        <button type="button" data-s="3" onclick="pickPubStar(3)">★</button>
+        <button type="button" data-s="4" onclick="pickPubStar(4)">★</button>
+        <button type="button" data-s="5" onclick="pickPubStar(5)" class="on">★</button>
+      </div>
+      <input type="hidden" id="pubRvStars" value="5">
+    </div>
+    <div class="formfield"><label>ẢNH TRẢI NGHIỆM</label>
+      <div class="review-preview-wrap">
+        <label class="review-file-btn">📷 Chọn ảnh
+          <input type="file" id="pubRvImage" accept="image/*" onchange="previewPubReviewImage(this)">
+        </label>
+        <img id="pubRvPreview" alt="Xem trước">
+        <button type="button" class="btn" id="pubRvClearImg" style="display:none;padding:8px 12px" onclick="clearPubReviewImage()">Xóa ảnh</button>
+      </div>
+    </div>
+    <div class="formfield full"><label>MÔ TẢ TRẢI NGHIỆM *</label>
+      <textarea id="pubRvContent" rows="4" placeholder="Chia sẻ cảm nhận về chuyến đi, chỗ ở, dịch vụ..." required></textarea>
+    </div>
+  </div>
+  <button class="btn gold" style="margin-top:14px" onclick="submitPublicReview()">Gửi đánh giá</button>
+  <div class="muted" style="font-size:12px;margin-top:10px">Đánh giá sẽ hiển thị sau khi gửi (admin có thể ẩn/xóa nếu cần).</div>
+</div>
+
+<div class="grid" id="reviewsGrid"></div>
+</div></section>
+
+<section><div class="container quote"><div class="eyebrow">Guest stories</div><p>“Một chuyến đi được chuẩn bị rất chỉn chu. Mọi thứ vừa đủ — từ khách sạn, lịch trình đến những quán ăn địa phương.”</p><small>— Minh Anh · Hà Nội</small></div></section>
+
+<footer><div class="container"><div class="foot"><div><div class="logo"><span data-site-name>VISTA Travel</span></div><p>Những hành trình được thiết kế để bạn sống trọn từng khoảnh khắc.</p></div><div><h4>Khám phá</h4><p>Tour<br>Phòng<br>Event<br><a href="javascript:void(0)" onclick="showHistory()" style="cursor:pointer">Lịch sử</a><br>Blog</p></div><div><h4>Thông tin</h4><p>Về VISTA<br>Điều khoản<br>Chính sách</p></div><div><h4>Liên hệ</h4><p><span data-contact-email>hello@vista.travel</span><br><span data-contact-phone>+84 900 000 000</span><br><span data-contact-address>Hà Nội, Việt Nam</span></p></div></div><div class="bottom"><span>© 2026 <span data-site-name>VISTA Travel</span></span><span>Travel differently.</span></div></div></footer>
+<button class="float-admin" id="floatAdminBtn" onclick="showAdmin()">⚙ Quản trị</button>
+</div>
+
+
+<!-- HISTORY PAGE (trang riêng, không nằm trang chủ) -->
+<div id="historyScreen" class="history-screen">
+  <header class="history-header">
+    <div class="container nav" style="height:72px">
+      <a class="logo" href="javascript:void(0)" onclick="showSite()"><span data-site-name>VISTA Travel</span></a>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <div id="userAuthAreaHistory"></div>
+        <button class="btn darkbtn" onclick="showSite()">← Về trang chủ</button>
+        <button class="btn gold" onclick="renderHistory()">↻ Làm mới</button>
+      </div>
+    </div>
+  </header>
+  <div class="history-body">
+    <div class="container">
+      <div class="head" style="margin-bottom:22px">
+        <div>
+          <div class="eyebrow">History</div>
+          <h2>Lịch sử đặt & nạp tiền</h2>
+        </div>
+        <p>Danh sách đơn đặt và yêu cầu thanh toán chờ duyệt. Không cần nhập mã — danh sách hiện tự động.</p>
+      </div>
+      <div class="hist-box">
+        <div class="hist-tabs" id="histTabs">
+          <button type="button" class="active" data-f="all" onclick="renderHistory('all')">Tất cả</button>
+          <button type="button" data-f="pending" onclick="renderHistory('pending')">Chờ duyệt TT</button>
+          <button type="button" data-f="wait" onclick="renderHistory('wait')">Chờ thanh toán</button>
+          <button type="button" data-f="paid" onclick="renderHistory('paid')">Đã thanh toán</button>
+          <button type="button" onclick="renderHistory()" style="margin-left:auto">↻ Làm mới</button>
+        </div>
+        <div class="formgrid" style="margin-bottom:8px">
+          <div class="formfield"><label>LỌC SĐT (tùy chọn)</label><input id="histPhone" placeholder="Để trống = hiện tất cả" oninput="renderHistory()"></div>
+          <div class="formfield"><label>LỌC MÃ (tùy chọn)</label><input id="histCode" placeholder="Để trống = hiện tất cả" oninput="renderHistory()"></div>
+        </div>
+        <div id="histResults" class="hist-results" style="margin-top:10px"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOOKING MODAL -->
+<div class="modal hidden" id="bookingModal"><div class="modalbox">
+<div class="modalhead"><h2>Đặt dịch vụ</h2><button class="x" onclick="closeModal('bookingModal')">×</button></div>
+<form id="bookingForm" onsubmit="createBooking(event)">
+<div class="summary"><b id="bookService">Dịch vụ</b><br><span id="bookPrice"></span><div class="muted" id="bookPriceHint" style="margin-top:6px;font-size:12px"></div></div>
+<div class="formgrid">
+<div class="formfield"><label>HỌ VÀ TÊN *</label><input id="customerName" required></div>
+<div class="formfield"><label>SỐ ĐIỆN THOẠI *</label><input id="customerPhone" required></div>
+<div class="formfield"><label>EMAIL</label><input id="customerEmail" type="email"></div>
+<div class="formfield"><label>SỐ KHÁCH</label><input id="customerGuests" type="number" min="1" value="2" required oninput="recalcBookingPrice()"></div>
+<div class="formfield"><label>NGÀY ĐI / NHẬN PHÒNG *</label><input id="bookDate" type="date" required onchange="recalcBookingPrice()"></div>
+<div class="formfield"><label>NGÀY VỀ / TRẢ PHÒNG</label><input id="bookDate2" type="date" onchange="recalcBookingPrice()"></div>
+<div class="formfield full"><label>GHI CHÚ</label><textarea id="customerNote" rows="3"></textarea></div>
+</div>
+<button class="btn gold" style="width:100%;margin-top:15px">Tạo booking & thanh toán</button>
+</form>
+</div></div>
+
+<!-- PAYMENT MODAL -->
+<div class="modal hidden" id="paymentModal"><div class="modalbox"><div class="modalhead"><h2>Thanh toán QR</h2><button class="x" onclick="closeModal('paymentModal')">×</button></div>
+<div class="paybox">
+<p>Mã booking: <b id="payCode"></b></p>
+<h2 id="payAmount"></h2>
+<img id="payQr" class="qr" alt="QR thanh toán">
+<div class="bank"><b id="payBank"></b><br>Chủ tài khoản: <b id="payOwner"></b><br>Số tài khoản: <b id="payAccount"></b><br>Nội dung: <b id="payContent"></b></div>
+<div class="notice">Hãy quét QR bằng ứng dụng ngân hàng, chuyển đúng số tiền và đúng nội dung. Sau đó bấm nút bên dưới để báo đã thanh toán.</div>
+<button class="btn gold" style="width:100%;margin-top:14px" onclick="markPaid()">✓ Tôi đã thanh toán</button>
+</div></div></div>
+
+
+
+<!-- BOOKING DETAIL MODAL (Admin) -->
+<div class="modal hidden" id="bookingDetailModal"><div class="modalbox">
+<div class="modalhead"><h2>Chi tiết booking</h2><button class="x" onclick="closeModal('bookingDetailModal')">×</button></div>
+<div id="bookingDetailBody"></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px" id="bookingDetailActions"></div>
+</div></div>
+
+
+<!-- CUSTOMER AUTH -->
+<div class="modal hidden auth-modal" id="authModal"><div class="modalbox">
+  <div class="modalhead"><h2 id="authTitle">Tài khoản</h2><button class="x" onclick="closeModal('authModal')">×</button></div>
+  <div class="auth-tabs">
+    <button type="button" id="authTabLogin" class="active" onclick="switchAuthTab('login')">Đăng nhập</button>
+    <button type="button" id="authTabRegister" onclick="switchAuthTab('register')">Đăng ký</button>
+  </div>
+  <div id="authLoginBox">
+    <div class="formfield"><label>EMAIL / SĐT</label><input id="loginId" placeholder="Email hoặc số điện thoại"></div>
+    <div class="formfield"><label>MẬT KHẨU</label><input id="loginPass" type="password" placeholder="Mật khẩu" onkeydown="if(event.key==='Enter')customerLogin()"></div>
+    <div class="login-error" id="customerLoginError"></div>
+    <button class="btn gold" style="width:100%;margin-top:4px" onclick="customerLogin()">Đăng nhập</button>
+  </div>
+  <div id="authRegisterBox" class="hidden">
+    <div class="formfield"><label>HỌ TÊN</label><input id="regName" placeholder="Nguyễn Văn A"></div>
+    <div class="formfield"><label>SỐ ĐIỆN THOẠI</label><input id="regPhone" placeholder="09xxxxxxxx"></div>
+    <div class="formfield"><label>EMAIL</label><input id="regEmail" type="email" placeholder="email@example.com"></div>
+    <div class="formgrid">
+      <div class="formfield"><label>MẬT KHẨU</label><input id="regPass" type="password" placeholder="Từ 4 ký tự"></div>
+      <div class="formfield"><label>NHẬP LẠI</label><input id="regPass2" type="password" placeholder="Nhập lại"></div>
+    </div>
+    <div class="login-error" id="customerRegError"></div>
+    <button class="btn gold" style="width:100%;margin-top:6px" onclick="customerRegister()">Đăng ký</button>
+  </div>
+</div></div>
+
+<!-- ADMIN LOGIN -->
+<div class="admin-login hidden" id="adminLogin">
+  <div class="login-box">
+    <div class="logo"><span data-site-name>VISTA Travel</span></div>
+    <h2>Đăng nhập quản trị</h2>
+    <p>Đăng nhập để quản lý booking và tài khoản nhận thanh toán.</p>
+    <input id="adminUser" type="text" placeholder="Tên đăng nhập" autocomplete="username">
+    <input id="adminPass" type="password" placeholder="Mật khẩu" autocomplete="current-password"
+           onkeydown="if(event.key==='Enter')adminLoginSubmit()">
+    <div class="login-error" id="loginError"></div>
+    <button class="btn gold" style="width:100%" onclick="adminLoginSubmit()">Đăng nhập Admin</button>
+    <button class="btn" style="width:100%;margin-top:10px" onclick="closeAdminLogin()">← Quay lại website</button>
+    <div class="muted" style="font-size:12px;margin-top:14px;text-align:center">Chỉ tài khoản quản trị viên được cấp phép.</div>
+  </div>
+</div>
+
+<!-- ADMIN -->
+<div class="admin-screen" id="adminScreen"><div class="admin-layout">
+<button class="admin-menu-btn" onclick="toggleAdminMenu(true)" aria-label="Mở menu">☰</button>
+<aside class="sidebar" id="adminSidebar">
+  <div class="sidebar-brand">
+    <div class="brand-mark">V</div>
+    <div>
+      <div class="brand-name" data-site-name>VISTA Travel</div>
+      <div class="brand-sub">Admin Panel</div>
+    </div>
+    <button class="drawer-close" onclick="toggleAdminMenu(false)" aria-label="Đóng menu">×</button>
+  </div>
+
+  <div class="admin-user">
+    <div class="avatar">●</div>
+    <div><b>admin</b><small>● Online</small></div>
+    <span>⌄</span>
+  </div>
+
+  <div class="nav-section">
+    <div class="navitem active" onclick="adminTab('dashboard',this);toggleAdminMenu(false)">
+      <span class="navicon">⌂</span><span>Tổng quan</span>
+    </div>
+
+    <div class="nav-divider"><span>ĐẶT DỊCH VỤ</span></div>
+
+    <div class="navitem" onclick="adminTab('tourBookings',this);toggleAdminMenu(false)">
+      <span class="navicon">✈</span><span>Đặt tour</span>
+    </div>
+    <div class="navitem" onclick="adminTab('roomBookings',this);toggleAdminMenu(false)">
+      <span class="navicon">▣</span><span>Đặt phòng</span>
+    </div>
+    <div class="navitem" onclick="adminTab('bookings',this);toggleAdminMenu(false)">
+      <span class="navicon">▤</span><span>Tất cả booking</span>
+    </div>
+
+    <div class="nav-divider"><span>DỊCH VỤ</span></div>
+
+    <div class="navitem" onclick="adminTab('tours',this);toggleAdminMenu(false)">
+      <span class="navicon">✈</span><span>Quản lý Tour</span>
+    </div>
+    <div class="navitem" onclick="adminTab('rooms',this);toggleAdminMenu(false)">
+      <span class="navicon">▣</span><span>Quản lý Phòng</span>
+    </div>
+    <div class="navitem" onclick="adminTab('events',this);toggleAdminMenu(false)">
+      <span class="navicon">▦</span><span>Quản lý Event</span>
+    </div>
+    <div class="navitem" onclick="adminTab('blog',this);toggleAdminMenu(false)">
+      <span class="navicon">▤</span><span>Quản lý Blog</span>
+    </div>
+    <div class="navitem" onclick="adminTab('reviews',this);toggleAdminMenu(false)">
+      <span class="navicon">★</span><span>Quản lý Đánh giá</span>
+    </div>
+
+    <div class="nav-divider"><span>THANH TOÁN & WEBSITE</span></div>
+
+    <div class="navitem" onclick="adminTab('topup',this);toggleAdminMenu(false)">
+      <span class="navicon">₫</span><span>Nạp tiền / Duyệt TT</span>
+    </div>
+    <div class="navitem" onclick="adminTab('history',this);toggleAdminMenu(false)">
+      <span class="navicon">☰</span><span>Lịch sử booking</span>
+    </div>
+    <div class="navitem" onclick="adminTab('payment',this);toggleAdminMenu(false)">
+      <span class="navicon">▣</span><span>Tài khoản thanh toán</span>
+    </div>
+    <div class="navitem" onclick="adminTab('info',this);toggleAdminMenu(false)">
+      <span class="navicon">✎</span><span>Chỉnh sửa thông tin</span>
+    </div>
+    <div class="navitem" onclick="adminTab('theme',this);toggleAdminMenu(false)">
+      <span class="navicon">🎨</span><span>Màu giao diện</span>
+    </div>
+    <div class="navitem" onclick="adminTab('users',this);toggleAdminMenu(false)">
+      <span class="navicon">👤</span><span>Quản lý người dùng</span>
+    </div>
+  </div>
+
+  <div class="sidebar-bottom">
+    <div class="navitem" onclick="showSite()">
+      <span class="navicon">←</span><span>Về Website</span>
+    </div>
+    <div class="navitem logout-item" onclick="adminLogout()">
+      <span class="navicon">⇥</span><span>Đăng xuất</span>
+    </div>
+  </div>
+
+  <div class="sidebar-promo">
+    <div class="promo-title" data-site-name>VISTA Travel</div>
+    <div class="promo-text">Khám phá thế giới<br>cùng bạn!</div>
+  </div>
+</aside>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleAdminMenu(false)"></div>
+
+<div class="admin-top"><div><h1 id="adminTitle">Dashboard</h1><p class="muted">Quản lý <span data-site-name>VISTA Travel</span></p></div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn gold" onclick="showSite()">Xem website</button><button class="btn" onclick="adminLogout()">Đăng xuất</button></div></div>
+
+<div id="tab-dashboard">
+<div class="stats"><div class="stat"><small>Doanh thu</small><strong id="statRevenue">0đ</strong></div><div class="stat"><small>Booking</small><strong id="statBookings">0</strong></div><div class="stat"><small>Tour</small><strong>36</strong></div><div class="stat"><small>Phòng</small><strong>214</strong></div></div>
+
+<div class="panel revenue-panel">
+  <div class="revenue-head">
+    <div class="revenue-title">
+      <div class="chart-icon">▥</div>
+      <h3>Doanh thu</h3>
+    </div>
+    <select id="revenueRange" class="revenue-filter" onchange="renderRevenueChart(this.value)">
+      <option value="7">7 ngày qua</option>
+      <option value="30">30 ngày qua</option>
+      <option value="90">90 ngày qua</option>
+    </select>
+  </div>
+  <div class="revenue-total" id="revenueChartTotal">0đ</div>
+  <div class="revenue-sub" id="revenueChartSub">↑ 0% so với kỳ trước</div>
+  <div class="revenue-chart-area">
+    <div class="revenue-tooltip" id="revenueTooltip"></div>
+    <div class="revenue-chart-wrap">
+      <svg id="revenueChart" class="revenue-svg" viewBox="0 0 760 250" preserveAspectRatio="none" role="img" aria-label="Biểu đồ doanh thu"></svg>
+    </div>
+  </div>
+</div>
+
+<div class="panel"><div class="panelhead"><h3>Booking gần đây</h3></div><div class="tablewrap"><table class="table" id="dashTable"></table></div><div id="dashPages" class="booking-pages"></div></div>
+</div>
+
+
+<div id="tab-tourBookings" class="hidden">
+  <div class="panel">
+    <div class="panel-head">
+      <div><h3>Đặt tour</h3><p class="muted">Chỉ hiển thị các booking tour.</p></div>
+      <button class="btn gold" onclick="renderServiceBookings('tour')">Làm mới</button>
+    </div>
+    <div class="tablewrap"><table class="table" id="tourBookingTable"></table></div>
+    <div id="tourBookingPages" class="booking-pages"></div>
+  </div>
+</div>
+
+<div id="tab-roomBookings" class="hidden">
+  <div class="panel">
+    <div class="panel-head">
+      <div><h3>Đặt phòng</h3><p class="muted">Chỉ hiển thị các booking phòng.</p></div>
+      <button class="btn gold" onclick="renderServiceBookings('room')">Làm mới</button>
+    </div>
+    <div class="tablewrap"><table class="table" id="roomBookingTable"></table></div>
+    <div id="roomBookingPages" class="booking-pages"></div>
+  </div>
+</div>
+
+<div id="tab-tours" class="hidden">
+  <div class="panel">
+    <div class="panel-head"><div><h3>Quản lý Tour</h3><p class="muted">Danh sách tour được quản lý riêng.</p></div><button class="btn gold" onclick="toast('Form thêm Tour đã sẵn sàng.')">+ Thêm Tour</button></div>
+    <div class="service-grid">
+      <div class="service-admin-card"><b>Hạ Long — Di sản biển trời</b><span>4.890.000đ</span><small>Tour</small></div>
+      <div class="service-admin-card"><b>Phú Quốc — Nắng vàng & biển xanh</b><span>6.290.000đ</span><small>Tour</small></div>
+      <div class="service-admin-card"><b>Đà Nẵng — Hội An — Huế</b><span>7.490.000đ</span><small>Tour</small></div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-rooms" class="hidden">
+  <div class="panel">
+    <div class="panel-head"><div><h3>Quản lý Phòng</h3><p class="muted">Danh sách phòng được quản lý riêng.</p></div><button class="btn gold" onclick="toast('Form thêm Phòng đã sẵn sàng.')">+ Thêm Phòng</button></div>
+    <div class="service-grid">
+      <div class="service-admin-card"><b>Ocean Pearl Resort</b><span>2.190.000đ / đêm</span><small>Phòng</small></div>
+      <div class="service-admin-card"><b>Azure Bay Hotel</b><span>1.790.000đ / đêm</span><small>Phòng</small></div>
+      <div class="service-admin-card"><b>The Heritage House</b><span>1.490.000đ / đêm</span><small>Phòng</small></div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-events" class="hidden">
+  <div class="panel">
+    <div class="panel-head"><div><h3>Quản lý Event</h3><p class="muted">Quản lý sự kiện riêng biệt với Blog.</p></div><button class="btn gold" onclick="toast('Form thêm Event đã sẵn sàng.')">+ Thêm Event</button></div>
+    <div class="empty-state">Chưa có event mới. Bạn có thể thêm event tại đây.</div>
+  </div>
+</div>
+
+<div id="tab-blog" class="hidden">
+  <div class="panel">
+    <div class="panel-head"><div><h3>Quản lý Blog</h3><p class="muted">Quản lý bài viết riêng biệt với Event.</p></div><button class="btn gold" onclick="toast('Form thêm Blog đã sẵn sàng.')">+ Thêm Blog</button></div>
+    <div class="empty-state">Chưa có bài viết mới. Bạn có thể thêm Blog tại đây.</div>
+  </div>
+</div>
+
+
+<div id="tab-reviews" class="hidden">
+  <div class="panel">
+    <div class="panelhead">
+      <div>
+        <h3>Quản lý Đánh giá</h3>
+        <p class="muted">Thêm, sửa hoặc ẩn đánh giá hiển thị trên trang chủ.</p>
+      </div>
+      <button class="btn gold" onclick="showReviewForm()">+ Thêm đánh giá</button>
+    </div>
+    <div id="reviewFormBox" class="hidden" style="padding:0 0 18px">
+      <div class="formgrid">
+        <div class="formfield"><label>TÊN KHÁCH</label><input id="rvName" placeholder="Nguyễn Minh Anh"></div>
+        <div class="formfield"><label>ĐỊA ĐIỂM / GÓI</label><input id="rvPlace" placeholder="Tour Hạ Long"></div>
+        <div class="formfield"><label>SỐ SAO (1-5)</label>
+          <select id="rvStars"><option value="5">5 sao</option><option value="4">4 sao</option><option value="3">3 sao</option><option value="2">2 sao</option><option value="1">1 sao</option></select>
+        </div>
+        <div class="formfield"><label>NGÀY</label><input id="rvDate" type="date"></div>
+        <div class="formfield full"><label>NỘI DUNG ĐÁNH GIÁ</label><textarea id="rvContent" rows="3" placeholder="Chuyến đi rất tuyệt..."></textarea></div>
+        <div class="formfield full"><label>ẢNH (tùy chọn)</label>
+          <div class="review-preview-wrap">
+            <label class="review-file-btn">📷 Chọn ảnh
+              <input type="file" id="rvImage" accept="image/*" onchange="previewAdminReviewImage(this)">
+            </label>
+            <img id="rvPreview" alt="Xem trước">
+            <button type="button" class="btn" id="rvClearImg" style="display:none;padding:8px 12px" onclick="clearAdminReviewImage()">Xóa ảnh</button>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+        <button class="btn gold" onclick="saveReview()">Lưu đánh giá</button>
+        <button class="btn" onclick="hideReviewForm()">Hủy</button>
+      </div>
+    </div>
+    <div class="tablewrap"><table class="table" id="reviewAdminTable"></table></div>
+  </div>
+</div>
+
+<div id="tab-bookings" class="hidden"><div class="panel"><div class="panelhead"><h3>Danh sách booking</h3><button class="btn gold" onclick="renderAdmin()">Làm mới</button></div><div class="tablewrap"><table class="table" id="bookingTable"></table></div><div id="bookingPages" class="booking-pages"></div></div></div>
+
+<div id="tab-products" class="hidden"><div class="panel"><h3>Tour / Phòng</h3><p class="smallhelp">Bản một-file này có sẵn dữ liệu mẫu. Bạn có thể mở rộng CRUD tại đây khi chuyển sang backend/database.</p><button class="btn gold" onclick="toast('Đã mở form thêm dịch vụ mẫu.')">+ Thêm tour / phòng</button></div></div>
+
+<div id="tab-content" class="hidden"><div class="panel"><h3>Blog / Event</h3><p class="smallhelp">Quản lý nội dung hiển thị trên website. Bản demo đã có sẵn các bài viết và sự kiện.</p><button class="btn gold" onclick="toast('Đã mở trình quản lý nội dung.')">+ Thêm nội dung</button></div></div>
+
+
+    <div class="panel hidden" id="orphanWebsitePanel" style="margin-top:18px">
+      <div class="panel-head">
+        <div>
+          <h3>Thông tin Website</h3>
+          <p class="muted">Đổi tên hiển thị của website trực tiếp từ Admin.</p>
+        </div>
+      </div>
+      <div style="padding:20px">
+        <label style="display:block;font-weight:800;margin-bottom:8px">Tên website</label>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <input id="websiteNameInput" type="text" maxlength="60"
+                 placeholder="Nhập tên website"
+                 style="flex:1;min-width:220px;padding:13px 14px;border:1px solid var(--line);border-radius:12px;outline:none">
+          <button class="btn gold" onclick="saveWebsiteName()">Lưu tên website</button>
+        </div>
+        <div class="muted" style="font-size:12px;margin-top:9px">
+          Tên này sẽ cập nhật logo, tiêu đề trình duyệt và tên hiển thị ở các khu vực của website.
+        </div>
+
+        <div style="height:1px;background:var(--line);margin:22px 0"></div>
+        <label style="display:block;font-weight:800;margin-bottom:10px">Thông tin liên hệ</label>
+        <div class="formgrid" style="margin:0">
+          <div class="formfield">
+            <label>EMAIL</label>
+            <input id="contactEmailInput" type="email" placeholder="hello@vista.travel">
+          </div>
+          <div class="formfield">
+            <label>SỐ ĐIỆN THOẠI</label>
+            <input id="contactPhoneInput" type="text" placeholder="+84 900 000 000">
+          </div>
+          <div class="formfield" style="grid-column:1/-1">
+            <label>ĐỊA CHỈ</label>
+            <input id="contactAddressInput" type="text" placeholder="Hà Nội, Việt Nam">
+          </div>
+        </div>
+        <button class="btn gold" style="margin-top:12px" onclick="saveContactInfo()">Lưu thông tin liên hệ</button>
+        <div class="muted" style="font-size:12px;margin-top:9px">
+          Sau khi lưu, thông tin sẽ đổi ngay ở mục <b>Liên hệ</b> trên trang chủ.
+        </div>
+      </div>
+    </div>
+
+
+<div class="admin-tab hidden" id="tab-info">
+  <div class="panel">
+    <div class="panel-head">
+      <div>
+        <h3>Chỉnh sửa thông tin website</h3>
+        <p class="muted">Thay đổi thông tin hiển thị trên trang chủ mà không cần sửa code.</p>
+      </div>
+      <span class="badge">Đã lưu tự động trên trình duyệt</span>
+    </div>
+
+    <div style="padding:20px">
+      <div class="formgrid">
+        <div class="formfield">
+          <label>TÊN WEBSITE</label>
+          <input id="infoSiteName" type="text" maxlength="60" placeholder="VISTA Travel">
+        </div>
+        <div class="formfield">
+          <label>SLOGAN</label>
+          <input id="infoSlogan" type="text" maxlength="120" placeholder="Đi xa hơn. Nhớ lâu hơn.">
+        </div>
+        <div class="formfield">
+          <label>EMAIL</label>
+          <input id="infoEmail" type="email" placeholder="hello@vista.travel">
+        </div>
+        <div class="formfield">
+          <label>SỐ ĐIỆN THOẠI</label>
+          <input id="infoPhone" type="text" placeholder="+84 900 000 000">
+        </div>
+        <div class="formfield" style="grid-column:1/-1">
+          <label>ĐỊA CHỈ</label>
+          <input id="infoAddress" type="text" placeholder="Hà Nội, Việt Nam">
+        </div>
+        <div class="formfield" style="grid-column:1/-1">
+          <label>MÔ TẢ WEBSITE</label>
+          <textarea id="infoDescription" rows="4" maxlength="300"
+            placeholder="Tour du lịch, phòng nghỉ và trải nghiệm đáng nhớ."></textarea>
+        </div>
+        <div class="formfield">
+          <label>FACEBOOK</label>
+          <input id="infoFacebook" type="text" placeholder="https://facebook.com/...">
+        </div>
+        <div class="formfield">
+          <label>ZALO / LIÊN HỆ NHANH</label>
+          <input id="infoZalo" type="text" placeholder="Số Zalo hoặc đường dẫn">
+        </div>
+      </div>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+        <button class="btn gold" onclick="saveGeneralInfo()">💾 Lưu thông tin</button>
+        <button class="btn" onclick="loadGeneralInfo()">↻ Khôi phục dữ liệu đã lưu</button>
+      </div>
+      <div class="muted" style="font-size:12px;margin-top:10px">
+        Sau khi lưu, thông tin sẽ được cập nhật ngay trên trang chủ.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="tab-topup" class="hidden">
+  <div class="panel">
+    <div class="panelhead">
+      <div>
+        <h3>Nạp tiền / Duyệt thanh toán <span class="pay-queue-stat" id="topupCount">0 chờ duyệt</span></h3>
+        <p class="muted">Khi khách bấm «Tôi đã thanh toán», yêu cầu xuất hiện tại đây để admin duyệt.</p>
+      </div>
+      <button class="btn gold" onclick="renderTopupQueue()">Làm mới</button>
+    </div>
+    <div class="tablewrap"><table class="table" id="topupTable"></table></div>
+  </div>
+  <div class="panel" style="margin-top:16px">
+    <div class="panelhead"><h3>Đã duyệt gần đây</h3></div>
+    <div class="tablewrap"><table class="table" id="topupDoneTable"></table></div>
+  </div>
+</div>
+
+
+<div id="tab-history" class="hidden">
+  <div class="panel">
+    <div class="panelhead">
+      <div>
+        <h3>Lịch sử booking</h3>
+        <p class="muted">Toàn bộ đơn đặt, trạng thái thanh toán và nạp tiền chờ duyệt.</p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn" onclick="renderAdminHistory('all')">Tất cả</button>
+        <button class="btn" onclick="renderAdminHistory('pending')">Chờ duyệt</button>
+        <button class="btn" onclick="renderAdminHistory('wait')">Chờ TT</button>
+        <button class="btn" onclick="renderAdminHistory('paid')">Đã TT</button>
+      </div>
+    </div>
+    <div class="tablewrap"><table class="table" id="adminHistTable"></table></div>
+  </div>
+</div>
+
+<div id="tab-theme" class="hidden">
+  <div class="panel">
+    <div class="panelhead">
+      <div>
+        <h3>Màu giao diện website</h3>
+        <p class="muted">Mỗi ô màu gắn với thành phần cụ thể trên trang — xem mô tả dưới tên màu.</p>
+      </div>
+      <span class="badge">Đồng bộ cho mọi người</span>
+    </div>
+    <div style="padding:8px 4px 18px">
+      <div class="color-grid">
+        <div class="color-item">
+          <label>1. Màu chính (Navy)</label>
+          <small>Header menu, sidebar Admin, nút tối, toast thông báo, chữ giá tiền</small>
+          <input type="color" id="themeNavy" value="#092238" oninput="previewTheme()">
+        </div>
+        <div class="color-item">
+          <label>2. Màu phụ (Navy 2)</label>
+          <small>Khối nền phụ, gradient sidebar, vùng nhấn thứ cấp</small>
+          <input type="color" id="themeNavy2" value="#123c59" oninput="previewTheme()">
+        </div>
+        <div class="color-item">
+          <label>3. Màu nhấn (Gold)</label>
+          <small>Nút «Đặt ngay / Đặt tour», eyebrow, icon nổi bật, hover menu</small>
+          <input type="color" id="themeGold" value="#d8b36a" oninput="previewTheme()">
+        </div>
+        <div class="color-item">
+          <label>4. Nền kem (Cream)</label>
+          <small>Nền section Event, form đánh giá, trang Lịch sử, hộp tóm tắt booking</small>
+          <input type="color" id="themeCream" value="#f7f3eb" oninput="previewTheme()">
+        </div>
+        <div class="color-item">
+          <label>5. Chữ chính (Ink)</label>
+          <small>Tiêu đề, nội dung đoạn văn, chữ trong form và bảng</small>
+          <input type="color" id="themeInk" value="#18242d" oninput="previewTheme()">
+        </div>
+        <div class="color-item">
+          <label>6. Chữ mờ (Muted)</label>
+          <small>Mô tả phụ, label nhỏ, gợi ý placeholder, meta đánh giá</small>
+          <input type="color" id="themeMuted" value="#73808a" oninput="previewTheme()">
+        </div>
+        <div class="color-item">
+          <label>7. Đường viền (Line)</label>
+          <small>Viền thẻ card, ô input, bảng Admin, đường kẻ phân cách</small>
+          <input type="color" id="themeLine" value="#e4e8eb" oninput="previewTheme()">
+        </div>
+        <div class="color-item">
+          <label>8. Màu thành công (OK)</label>
+          <small>Badge «Đã thanh toán», trạng thái online, điểm nhấn tích cực</small>
+          <input type="color" id="themeOk" value="#2e8b57" oninput="previewTheme()">
+        </div>
+      </div>
+      <div style="margin-top:16px">
+        <div class="muted" style="font-size:12px;margin-bottom:8px">Xem trước nhanh các màu đã chọn</div>
+        <div class="theme-preview" id="themePreviewSwatches"></div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+        <button class="btn gold" onclick="saveTheme()">💾 Lưu màu giao diện</button>
+        <button class="btn" onclick="resetTheme()">Khôi phục mặc định</button>
+      </div>
+      <p class="muted" style="font-size:12px;margin-top:10px">Kéo thanh màu để xem trước ngay. Bấm <b>Lưu màu giao diện</b> để áp dụng màu chung cho toàn bộ website. Lưu ý: website HTML tĩnh không thể tự đồng bộ giữa các thiết bị nếu chưa kết nối máy chủ/cơ sở dữ liệu.</p>
+    </div>
+  </div>
+</div>
+
+<div id="tab-users" class="hidden">
+  <div class="panel">
+    <div class="panelhead">
+      <div>
+        <h3>Quản lý tài khoản người dùng</h3>
+        <p class="muted">Quản lý tài khoản Admin và khách hàng đã đăng ký.</p>
+      </div>
+      <button class="btn gold" onclick="showAddUserForm()">+ Thêm tài khoản</button>
+    </div>
+    <div id="addUserBox" class="hidden" style="padding:0 0 16px">
+      <div class="formgrid">
+        <div class="formfield"><label>TÊN ĐĂNG NHẬP</label><input id="newUserName" placeholder="vd: staff01"></div>
+        <div class="formfield"><label>MẬT KHẨU</label><input id="newUserPass" type="password" placeholder="Tối thiểu 4 ký tự"></div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:10px">
+        <button class="btn gold" onclick="addAdminUser()">Tạo tài khoản</button>
+        <button class="btn" onclick="hideAddUserForm()">Hủy</button>
+      </div>
+    </div>
+    <div class="tablewrap"><table class="table" id="usersTable"></table></div>
+  </div>
+  <div class="panel" style="margin-top:16px">
+    <div class="panelhead"><div><h3>Đổi mật khẩu tài khoản đang đăng nhập</h3><p class="muted">Áp dụng cho user hiện tại: <b id="currentAdminName">admin</b></p></div></div>
+    <div class="formgrid" style="max-width:640px;padding:0 4px 8px">
+      <div class="formfield"><label>MẬT KHẨU HIỆN TẠI</label><input id="pwOld" type="password"></div>
+      <div class="formfield"><label>MẬT KHẨU MỚI</label><input id="pwNew" type="password"></div>
+      <div class="formfield"><label>NHẬP LẠI MẬT KHẨU MỚI</label><input id="pwNew2" type="password"></div>
+    </div>
+    <button class="btn gold" style="margin-top:8px" onclick="changeMyPassword()">Đổi mật khẩu</button>
+  </div>
+</div>
+
+
+<div id="tab-payment" class="hidden"><div class="panel admin-form"><h3>Tài khoản thanh toán</h3><p class="smallhelp">Thông tin này sẽ được dùng để hiển thị trên màn hình QR thanh toán.</p>
+<div class="formfield"><label>TÊN NGÂN HÀNG</label><input id="setBank"></div>
+<div class="formfield"><label>CHỦ TÀI KHOẢN</label><input id="setOwner"></div>
+<div class="formfield"><label>SỐ TÀI KHOẢN</label><input id="setAccount"></div>
+<div class="formfield"><label>NỘI DUNG CHUYỂN KHOẢN MẶC ĐỊNH</label><input id="setNote"></div>
+<div class="formfield"><label>LINK ẢNH QR</label><input id="setQr" placeholder="https://.../qr.png"><img id="qrPreview" class="previewqr hidden"></div>
+<button class="btn gold save" onclick="savePayment()">Lưu tài khoản thanh toán</button>
+</div></div>
+</main></div></div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const KEY_BOOK='vista_bookings_v1', KEY_PAY='vista_payment_v1';
+let selected={service:'',price:0,type:'tour'}, currentBooking=null;
+
+const defaultPay={
+ bank:'MB Bank',
+ owner:'VISTA TRAVEL',
+ account:'0123456789',
+ note:'VISTA',
+ qr:'https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=VISTA%20TRAVEL%20THANH%20TOAN'
+};
+
+function getBookings(){return JSON.parse(localStorage.getItem(KEY_BOOK)||'[]')}
+function setBookings(x){localStorage.setItem(KEY_BOOK,JSON.stringify(x))}
+function getPay(){return {...defaultPay,...JSON.parse(localStorage.getItem(KEY_PAY)||'{}')}}
+function money(n){return Number(n).toLocaleString('vi-VN')+'đ'}
+function toast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2300)}
+function closeModal(id){document.getElementById(id).classList.add('hidden')}
+// baseDays: số ngày chuẩn của gói; basePrice: giá gói chuẩn (tour) hoặc giá / đêm (room)
+let pendingBooking=null;
+function openBooking(service='Hạ Long — Di sản biển trời',price='4890000',type='tour',baseDays=3){
+ // Chưa đăng nhập thành viên → hiện màn hình đăng ký/đăng nhập
+ if(!(getCustomerSession && getCustomerSession())){
+   pendingBooking={service,price,type,baseDays};
+   openAuthModal('register');
+   toast('Vui lòng đăng ký hoặc đăng nhập để đặt dịch vụ.');
+   return;
+ }
+ selected={service,price:Number(price),basePrice:Number(price),type,baseDays:Number(baseDays)||1};
+ document.getElementById('bookService').textContent=service;
+ document.getElementById('bookPrice').textContent='Giá từ: '+money(price);
+ const hint=document.getElementById('bookPriceHint');
+ if(hint){
+   if(type==='room') hint.textContent='Giá theo đêm × số đêm. Đổi ngày để cập nhật tổng tiền.';
+   else hint.textContent='Gói chuẩn '+selected.baseDays+' ngày. Đặt thêm ngày sẽ tính thêm phí.';
+ }
+ const today=new Date();
+ const d1=today.toISOString().slice(0,10);
+ const d2=new Date(today); d2.setDate(d2.getDate()+(type==='room'?1:selected.baseDays-1));
+ document.getElementById('bookDate').value=d1;
+ document.getElementById('bookDate2').value=d2.toISOString().slice(0,10);
+ recalcBookingPrice();
+ fillBookingFromCustomer();
+ document.getElementById('bookingModal').classList.remove('hidden');
+}
+function resumePendingBooking(){
+  if(!pendingBooking) return;
+  const p=pendingBooking;
+  pendingBooking=null;
+  openBooking(p.service,p.price,p.type,p.baseDays);
+}
+function nightsBetween(a,b){
+  if(!a||!b) return 0;
+  const d1=new Date(a+'T00:00:00'), d2=new Date(b+'T00:00:00');
+  if(Number.isNaN(d1.getTime())||Number.isNaN(d2.getTime())) return 0;
+  const diff=Math.round((d2-d1)/86400000);
+  return Math.max(0,diff);
+}
+function calcBookingPrice(){
+  const guests=Math.max(1,Number(document.getElementById('customerGuests')?.value)||1);
+  const d1=document.getElementById('bookDate')?.value;
+  const d2=document.getElementById('bookDate2')?.value;
+  const base=Number(selected.basePrice)||Number(selected.price)||0;
+  const type=selected.type||'tour';
+  const baseDays=Number(selected.baseDays)||1;
+  let total=base, detail='';
+  if(type==='room'){
+    let nights=nightsBetween(d1,d2);
+    if(nights<1) nights=1;
+    total=base*nights;
+    // phụ thu khách thứ 3 trở đi: +15%/khách/đêm
+    if(guests>2) total=Math.round(total*(1+(guests-2)*0.15));
+    detail=nights+' đêm × '+money(base)+(guests>2?' · phụ thu '+(guests-2)+' khách':'');
+  }else{
+    // tour: giá gói chuẩn cho baseDays ngày; mỗi ngày thêm = base/baseDays
+    let days=nightsBetween(d1,d2)+1; // inclusive
+    if(days<1) days=baseDays;
+    if(days<=baseDays){
+      total=base;
+      detail='Gói chuẩn '+baseDays+' ngày';
+    }else{
+      const perDay=base/baseDays;
+      total=Math.round(base + perDay*(days-baseDays));
+      detail='Gói '+baseDays+' ngày + '+(days-baseDays)+' ngày thêm';
+    }
+    if(guests>2){
+      total=Math.round(total*(1+(guests-2)*0.1));
+      detail+=(detail?' · ':'')+'phụ thu '+(guests-2)+' khách';
+    }
+  }
+  return {total,detail,days:type==='room'?nightsBetween(d1,d2)||1:(nightsBetween(d1,d2)+1||baseDays)};
+}
+function recalcBookingPrice(){
+  if(!selected||!selected.basePrice) return;
+  const {total,detail}=calcBookingPrice();
+  selected.price=total;
+  const el=document.getElementById('bookPrice');
+  if(el) el.textContent='Tổng: '+money(total);
+  const hint=document.getElementById('bookPriceHint');
+  if(hint) hint.textContent=detail||'';
+}
+function createBooking(e){
+ e.preventDefault();
+ const {total,detail,days}=calcBookingPrice();
+ selected.price=total;
+ const bookings=getBookings();
+ const code='VS-'+String(Date.now()).slice(-6);
+ const b={
+  code,
+  service:selected.service,
+  type:selected.type,
+  price:total,
+  basePrice:selected.basePrice,
+  days,
+  priceDetail:detail,
+  name:(customerName.value||'').trim(),
+  phone:(customerPhone.value||'').trim(),
+  email:(customerEmail.value||'').trim(),
+  guests:Number(customerGuests.value)||1,
+  date:bookDate.value,
+  date2:bookDate2.value,
+  note:(customerNote.value||'').trim(),
+  status:'Chờ thanh toán',
+  created:new Date().toLocaleString('vi-VN'),
+  createdAt:new Date().toISOString(),
+  paidAt:null,
+  paymentReported:false,
+  customerId:(getCustomerSession()||{}).id||null
+ };
+ bookings.unshift(b);setBookings(bookings);currentBooking=b;
+ closeModal('bookingModal');showPayment(b);renderAdmin();
+ applyWebsiteName();
+ if(typeof renderHistory==='function') renderHistory();
+ toast('Đã tạo booking '+code+'. Thông tin đã gửi tới Admin.');
+}
+function showPayment(b){
+ const p=getPay();
+ document.getElementById('payCode').textContent=b.code;
+ document.getElementById('payAmount').textContent=money(b.price);
+ document.getElementById('payQr').src=p.qr;
+ document.getElementById('payBank').textContent=p.bank;
+ document.getElementById('payOwner').textContent=p.owner;
+ document.getElementById('payAccount').textContent=p.account;
+ document.getElementById('payContent').textContent=(p.note+' '+b.code).trim();
+ document.getElementById('paymentModal').classList.remove('hidden');
+}
+function markPaid(){
+ if(!currentBooking)return;
+ const bs=getBookings();const i=bs.findIndex(x=>x.code===currentBooking.code);
+ if(i>=0){
+   bs[i].status='Khách báo đã thanh toán';
+   bs[i].paidAt=new Date().toISOString();
+   bs[i].paymentReported=true;
+   bs[i].paymentNote='Khách báo đã chuyển khoản QR';
+   setBookings(bs);currentBooking=bs[i];
+ }
+ closeModal('paymentModal');renderAdmin();
+ if(typeof renderTopupQueue==='function') renderTopupQueue();
+ if(typeof renderHistory==='function') renderHistory();
+ toast('Đã gửi yêu cầu nạp tiền '+currentBooking.code+'. Admin sẽ duyệt.');
+}
+function isPaidStatus(s){
+  return s==='Đã thanh toán' || s==='Khách báo đã thanh toán';
+}
+function confirmPaid(code){
+  const bs=getBookings();
+  const i=bs.findIndex(x=>x.code===code);
+  if(i<0) return;
+  bs[i].status='Đã thanh toán';
+  if(!bs[i].paidAt) bs[i].paidAt=new Date().toISOString();
+  bs[i].approvedAt=new Date().toISOString();
+  setBookings(bs);
+  renderAdmin();
+  if(typeof renderTopupQueue==='function') renderTopupQueue();
+  if(typeof renderHistory==='function') renderHistory();
+  toast('Đã duyệt nạp tiền / xác nhận TT '+code);
+}
+function cancelBooking(code){
+  const bs=getBookings();
+  const i=bs.findIndex(x=>x.code===code);
+  if(i<0) return;
+  bs[i].status='Đã hủy';
+  setBookings(bs);
+  renderAdmin();
+  if(typeof renderTopupQueue==='function') renderTopupQueue();
+  toast('Đã hủy booking '+code);
+}
+function rejectPayment(code){
+  const bs=getBookings();
+  const i=bs.findIndex(x=>x.code===code);
+  if(i<0) return;
+  bs[i].status='Chờ thanh toán';
+  bs[i].paymentReported=false;
+  bs[i].paidAt=null;
+  setBookings(bs);
+  renderAdmin();
+  renderTopupQueue();
+  if(typeof renderHistory==='function') renderHistory();
+  toast('Đã từ chối yêu cầu TT '+code+' — khách cần thanh toán lại');
+}
+function searchTravel(){
+ const d=document.getElementById('searchDest').value.trim();
+ toast(d?'Đang tìm dịch vụ tại '+d+'...':'Hãy nhập điểm đến bạn muốn tìm.');
+}
+function toggleMobile(){document.querySelector('.menu').style.display=document.querySelector('.menu').style.display==='flex'?'none':'flex'}
+
+
+
+function getContactInfo(){
+  try{
+    return JSON.parse(localStorage.getItem('vista_contact_v1')) || {
+      email:'hello@vista.travel',
+      phone:'+84 900 000 000',
+      address:'Hà Nội, Việt Nam'
+    };
+  }catch(e){
+    return {email:'hello@vista.travel',phone:'+84 900 000 000',address:'Hà Nội, Việt Nam'};
+  }
+}
+function applyContactInfo(){
+  const c=getContactInfo();
+  document.querySelectorAll('[data-contact-email]').forEach(el=>el.textContent=c.email);
+  document.querySelectorAll('[data-contact-phone]').forEach(el=>el.textContent=c.phone);
+  document.querySelectorAll('[data-contact-address]').forEach(el=>el.textContent=c.address);
+  const e=document.getElementById('contactEmailInput');
+  const ph=document.getElementById('contactPhoneInput');
+  const a=document.getElementById('contactAddressInput');
+  if(e && document.activeElement!==e)e.value=c.email;
+  if(ph && document.activeElement!==ph)ph.value=c.phone;
+  if(a && document.activeElement!==a)a.value=c.address;
+}
+function saveContactInfo(){
+  const email=(document.getElementById('contactEmailInput')?.value||'').trim();
+  const phone=(document.getElementById('contactPhoneInput')?.value||'').trim();
+  const address=(document.getElementById('contactAddressInput')?.value||'').trim();
+  if(!email && !phone && !address){
+    toast('Vui lòng nhập ít nhất một thông tin liên hệ.');
+    return;
+  }
+  const c={
+    email:email||'hello@vista.travel',
+    phone:phone||'+84 900 000 000',
+    address:address||'Hà Nội, Việt Nam'
+  };
+  localStorage.setItem('vista_contact_v1',JSON.stringify(c));
+  applyContactInfo();
+  toast('Đã cập nhật thông tin liên hệ trên trang chủ.');
+}
+
+
+function getGeneralInfo(){
+  try{
+    return JSON.parse(localStorage.getItem('vista_general_info_v1')) || {
+      siteName:getWebsiteName(),
+      slogan:'Đi xa hơn. Nhớ lâu hơn.',
+      email:getContactInfo().email,
+      phone:getContactInfo().phone,
+      address:getContactInfo().address,
+      description:'Tour du lịch, phòng nghỉ và trải nghiệm đáng nhớ.',
+      facebook:'',
+      zalo:''
+    };
+  }catch(e){
+    return {
+      siteName:'VISTA Travel',
+      slogan:'Đi xa hơn. Nhớ lâu hơn.',
+      email:'hello@vista.travel',
+      phone:'+84 900 000 000',
+      address:'Hà Nội, Việt Nam',
+      description:'Tour du lịch, phòng nghỉ và trải nghiệm đáng nhớ.',
+      facebook:'',
+      zalo:''
+    };
+  }
+}
+function loadGeneralInfo(){
+  const x=getGeneralInfo();
+  const set=(id,v)=>{const e=document.getElementById(id);if(e)e.value=v||''};
+  set('infoSiteName',x.siteName);
+  set('infoSlogan',x.slogan);
+  set('infoEmail',x.email);
+  set('infoPhone',x.phone);
+  set('infoAddress',x.address);
+  set('infoDescription',x.description);
+  set('infoFacebook',x.facebook);
+  set('infoZalo',x.zalo);
+}
+function saveGeneralInfo(){
+  const x={
+    siteName:(document.getElementById('infoSiteName')?.value||'').trim()||'VISTA Travel',
+    slogan:(document.getElementById('infoSlogan')?.value||'').trim()||'Đi xa hơn. Nhớ lâu hơn.',
+    email:(document.getElementById('infoEmail')?.value||'').trim()||'hello@vista.travel',
+    phone:(document.getElementById('infoPhone')?.value||'').trim()||'+84 900 000 000',
+    address:(document.getElementById('infoAddress')?.value||'').trim()||'Hà Nội, Việt Nam',
+    description:(document.getElementById('infoDescription')?.value||'').trim()||'Tour du lịch, phòng nghỉ và trải nghiệm đáng nhớ.',
+    facebook:(document.getElementById('infoFacebook')?.value||'').trim(),
+    zalo:(document.getElementById('infoZalo')?.value||'').trim()
+  };
+  localStorage.setItem('vista_general_info_v1',JSON.stringify(x));
+  localStorage.setItem('vista_website_name',x.siteName);
+  localStorage.setItem('vista_contact_v1',JSON.stringify({
+    email:x.email,phone:x.phone,address:x.address
+  }));
+  applyWebsiteName();
+  applyContactInfo();
+  applyGeneralInfo();
+  toast('Đã lưu toàn bộ thông tin website.');
+}
+function applyGeneralInfo(){
+  const x=getGeneralInfo();
+  document.querySelectorAll('[data-site-slogan]').forEach(e=>e.textContent=x.slogan);
+  document.querySelectorAll('[data-site-description]').forEach(e=>e.textContent=x.description);
+  const title=document.getElementById('heroTitle');
+  if(title && x.slogan) title.textContent=x.slogan;
+  const desc=document.querySelector('meta[name="description"]');
+  if(desc && x.description) desc.setAttribute('content',x.description);
+  const fb=document.querySelectorAll('[data-contact-facebook]');
+  fb.forEach(e=>{
+    if(x.facebook){e.href=x.facebook;e.style.display='';}
+    else e.style.display='none';
+  });
+}
+
+function getWebsiteName(){
+  return localStorage.getItem('vista_website_name') || 'VISTA Travel';
+}
+function applyWebsiteName(){
+  const name=getWebsiteName();
+  document.title=name+' — Tour, phòng & trải nghiệm';
+  document.querySelectorAll('[data-site-name]').forEach(el=>el.textContent=name);
+  const input=document.getElementById('websiteNameInput');
+  if(input && document.activeElement!==input) input.value=name;
+}
+function saveWebsiteName(){
+  const input=document.getElementById('websiteNameInput');
+  const name=(input?.value||'').trim();
+  if(!name){ toast('Vui lòng nhập tên website.'); return; }
+  localStorage.setItem('vista_website_name',name);
+  applyWebsiteName();
+  toast('Đã đổi tên website thành: '+name);
+}
+
+function toggleAdminMenu(open){
+  const side=document.getElementById('adminSidebar');
+  const overlay=document.getElementById('sidebarOverlay');
+  if(!side || !overlay) return;
+  side.classList.toggle('open', !!open);
+  overlay.classList.toggle('open', !!open);
+}
+
+
+let _logoClicks=0,_logoTimer=null;
+function handleLogoClick(e){
+  if(e) e.preventDefault();
+  _logoClicks++;
+  clearTimeout(_logoTimer);
+  _logoTimer=setTimeout(()=>{_logoClicks=0},1200);
+  if(_logoClicks>=5){
+    _logoClicks=0;
+    // Chỉ mở form admin — không hiện nút công khai
+    if(getCustomerSession && getCustomerSession()){
+      toast('Tài khoản thành viên không có quyền Quản trị.');
+      return;
+    }
+    showAdmin();
+    return;
+  }
+  showSite();
+}
+
+function showAdmin(){
+ // Thành viên đã đăng nhập không được mở Admin
+ if(getCustomerSession && getCustomerSession()){
+   toast('Tài khoản thành viên không có quyền Quản trị.');
+   return;
+ }
+
+ // MỖI LẦN VÀO ADMIN ĐỀU PHẢI ĐĂNG NHẬP LẠI
+ // Không cho phép dùng phiên Admin cũ để tự động vào trang quản trị.
+ localStorage.removeItem('vista_admin_login');
+ localStorage.removeItem('vista_admin_user');
+
+ document.getElementById('adminScreen')?.classList.remove('active');
+ document.getElementById('site').style.display='none';
+ document.getElementById('historyScreen')?.classList.remove('active');
+ document.getElementById('adminLogin').classList.remove('hidden');
+ document.getElementById('adminUser').value='';
+ document.getElementById('adminPass').value='';
+ document.getElementById('loginError').textContent='';
+ document.getElementById('adminUser').focus();
+}
+function adminLoginSubmit(){
+ const u=document.getElementById('adminUser').value.trim();
+ const p=document.getElementById('adminPass').value;
+ const user=findAdminUser(u);
+ if(!user || user.password!==p){
+  document.getElementById('loginError').textContent='Sai tên đăng nhập hoặc mật khẩu.';
+  return;
+ }
+ if(user.locked){
+  document.getElementById('loginError').textContent='Tài khoản đã bị khóa. Liên hệ quản trị viên.';
+  return;
+ }
+ localStorage.setItem('vista_admin_login','1');
+ localStorage.setItem('vista_admin_user', user.username);
+ document.getElementById('adminLogin').classList.add('hidden');
+ document.getElementById('adminUser').value='';
+ document.getElementById('adminPass').value='';
+ document.getElementById('loginError').textContent='';
+ document.getElementById('site').style.display='none';
+ document.getElementById('historyScreen')?.classList.remove('active');
+ document.getElementById('adminScreen').classList.add('active');
+ // cập nhật tên hiển thị sidebar
+ document.querySelectorAll('.admin-user b').forEach(el=>el.textContent=user.username);
+ renderAdmin();
+}
+function closeAdminLogin(){
+ document.getElementById('adminLogin').classList.add('hidden');
+ document.getElementById('loginError').textContent='';
+}
+function adminLogout(){
+ localStorage.removeItem('vista_admin_login');
+ localStorage.removeItem('vista_admin_user');
+ document.getElementById('adminScreen').classList.remove('active');
+ document.getElementById('site').style.display='block';
+ toast('Đã đăng xuất Admin.');
+ window.scrollTo(0,0);
+}
+function showSite(){
+ updateAdminButtonVisibility();
+ document.getElementById('adminScreen')?.classList.remove('active');
+ document.getElementById('adminLogin')?.classList.add('hidden');
+ document.getElementById('historyScreen')?.classList.remove('active');
+ document.getElementById('site').style.display='block';
+ window.scrollTo(0,0);
+}
+
+function showHistory(){
+  updateAdminButtonVisibility();
+  document.getElementById('adminScreen')?.classList.remove('active');
+  document.getElementById('adminLogin')?.classList.add('hidden');
+  document.getElementById('site').style.display='none';
+  const hs=document.getElementById('historyScreen');
+  if(hs){ hs.classList.add('active'); }
+  renderHistory();
+  window.scrollTo(0,0);
+}
+
+function adminTab(name,el){
+  const allTabs = [
+    'dashboard','tourBookings','roomBookings','bookings',
+    'tours','rooms','events','blog','reviews',
+    'topup','history','payment','info','theme','users','products','content'
+  ];
+  allTabs.forEach(x=>{
+    const elTab = document.getElementById('tab-'+x);
+    if(elTab) elTab.classList.add('hidden');
+  });
+  document.querySelectorAll('.admin-main > .panel').forEach(p=>{
+    if(p.querySelector('#websiteNameInput')) p.classList.add('hidden');
+  });
+
+  const target = document.getElementById('tab-'+name);
+  if(target) target.classList.remove('hidden');
+
+  document.querySelectorAll('.sidebar .navitem').forEach(x=>x.classList.remove('active'));
+  if(el) el.classList.add('active');
+
+  const titles = {
+    dashboard: 'Tổng quan',
+    tourBookings: 'Đặt tour',
+    roomBookings: 'Đặt phòng',
+    bookings: 'Tất cả booking',
+    tours: 'Quản lý Tour',
+    rooms: 'Quản lý Phòng',
+    events: 'Quản lý Event',
+    blog: 'Quản lý Blog',
+    reviews: 'Quản lý Đánh giá',
+    topup: 'Nạp tiền / Duyệt TT',
+    history: 'Lịch sử booking',
+    payment: 'Tài khoản thanh toán',
+    info: 'Chỉnh sửa thông tin',
+    theme: 'Màu giao diện',
+    users: 'Quản lý người dùng',
+    products: 'Tour / Phòng',
+    content: 'Blog / Event'
+  };
+  document.getElementById('adminTitle').textContent = titles[name] || 'Admin';
+
+  if(name==='payment') loadPayment();
+  if(name==='info') loadGeneralInfo();
+  if(name==='tourBookings') renderServiceBookings('tour');
+  if(name==='roomBookings') renderServiceBookings('room');
+  if(name==='bookings' || name==='dashboard') renderAdmin();
+  if(name==='reviews') renderReviewsAdmin();
+  if(name==='topup') renderTopupQueue();
+  if(name==='history') renderAdminHistory();
+  if(name==='theme') loadThemeForm();
+  if(name==='users') renderUsersAdmin();
+}
+let bookingPage=1;
+const BOOKINGS_PER_PAGE=10;
+
+
+function revenueDateKey(d){
+  const x=new Date(d);
+  if(Number.isNaN(x.getTime())) return null;
+  return x.toISOString().slice(0,10);
+}
+function revenueDataset(range){
+  const now=new Date();
+  now.setHours(23,59,59,999);
+  const days=Number(range)||7;
+  const labels=[], values=[];
+  for(let i=days-1;i>=0;i--){
+    const d=new Date(now);
+    d.setDate(now.getDate()-i);
+    labels.push(d);
+    values.push(0);
+  }
+  const map={};
+  labels.forEach((d,i)=>map[revenueDateKey(d)]=i);
+  getBookings().forEach(b=>{
+    if(!isPaidStatus(b.status)) return;
+    const raw=b.paidAt||b.dateCreated||b.createdAt||b.date;
+    const d=new Date(raw);
+    if(Number.isNaN(d.getTime())) return;
+    const idx=map[revenueDateKey(d)];
+    if(idx!==undefined) values[idx]+=Number(b.price)||0;
+  });
+  return {labels,values,days};
+}
+function renderRevenueChart(range){
+  const data=revenueDataset(range);
+  const svg=document.getElementById('revenueChart');
+  if(!svg)return;
+  const W=760,H=250;
+  const pad={l:48,r:12,t:14,b:35};
+  const iw=W-pad.l-pad.r, ih=H-pad.t-pad.b;
+  const max=Math.max(...data.values,100000);
+  const nice=Math.ceil(max/500000)*500000 || 500000;
+  const total=data.values.reduce((a,b)=>a+b,0);
+
+  const points=data.values.map((v,i)=>{
+    const x=pad.l+(data.values.length===1?iw/2:i*iw/(data.values.length-1));
+    const y=pad.t+ih-(v/nice)*ih;
+    return [x,y,v];
+  });
+
+  let grid='';
+  for(let j=0;j<=4;j++){
+    const y=pad.t+ih*j/4;
+    const val=nice*(1-j/4);
+    const label=val>=1000000?(val/1000000)+'tr':(val/1000)+'k';
+    grid+=`<line x1="${pad.l}" y1="${y}" x2="${W-pad.r}" y2="${y}" stroke="#e8eef3" stroke-width="1"/>`;
+    grid+=`<text x="${pad.l-8}" y="${y+4}" text-anchor="end" font-size="11" fill="#7b8a96">${label}</text>`;
+  }
+
+  const line=points.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
+  const area=line+` L ${points[points.length-1][0]} ${pad.t+ih} L ${points[0][0]} ${pad.t+ih} Z`;
+
+  let xlabels='';
+  const step=data.days<=7?1:Math.ceil(data.days/7);
+  data.labels.forEach((d,i)=>{
+    if(i%step!==0 && i!==data.labels.length-1)return;
+    const x=points[i][0];
+    const label=data.days<=7 ? `${d.getDate()}/${d.getMonth()+1}` : `${d.getDate()}/${d.getMonth()+1}`;
+    xlabels+=`<text x="${x}" y="${H-10}" text-anchor="middle" font-size="10" fill="#7b8a96">${label}</text>`;
+  });
+
+  const dots=points.map((p,i)=>`<circle class="revenue-dot" data-i="${i}" cx="${p[0]}" cy="${p[1]}" r="4.5" fill="#197cf0" stroke="#fff" stroke-width="2" style="cursor:pointer"/>`).join('');
+  svg.innerHTML=grid+`<path d="${area}" fill="#197cf0" opacity=".10"></path><path d="${line}" fill="none" stroke="#197cf0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>`+dots+xlabels;
+
+  document.getElementById('revenueChartTotal').textContent=money(total);
+  const previousTotal=previousRevenueTotal(data.days);
+  const percent=previousTotal?Math.round((total-previousTotal)/previousTotal*100):0;
+  const sub=document.getElementById('revenueChartSub');
+  sub.textContent=(percent>=0?'↑ ':'↓ ')+Math.abs(percent)+'% so với kỳ trước';
+  sub.style.color=percent>=0?'#36a86a':'#d45757';
+
+  svg.querySelectorAll('.revenue-dot').forEach(dot=>{
+    dot.addEventListener('mouseenter',()=>showRevenueTooltip(dot,data));
+    dot.addEventListener('mouseleave',hideRevenueTooltip);
+    dot.addEventListener('click',()=>showRevenueTooltip(dot,data));
+  });
+}
+function previousRevenueTotal(days){
+  const all=getBookings().filter(b=>isPaidStatus(b.status));
+  const now=new Date(); now.setHours(23,59,59,999);
+  const start=new Date(now); start.setDate(now.getDate()-days+1);
+  const prevEnd=new Date(start); prevEnd.setMilliseconds(-1);
+  const prevStart=new Date(prevEnd); prevStart.setDate(prevEnd.getDate()-days+1);
+  return all.reduce((sum,b)=>{
+    const d=new Date(b.paidAt||b.dateCreated||b.createdAt||b.date);
+    return d>=prevStart&&d<=prevEnd?sum+(Number(b.price)||0):sum;
+  },0);
+}
+function showRevenueTooltip(dot,data){
+  const i=Number(dot.dataset.i);
+  const d=data.labels[i], v=data.values[i];
+  const tip=document.getElementById('revenueTooltip');
+  if(!tip)return;
+  tip.textContent=`${d.getDate()}/${d.getMonth()+1}: ${money(v)}`;
+  tip.style.display='block';
+  const x=dot.getAttribute('cx'), y=dot.getAttribute('cy');
+  const svg=dot.ownerSVGElement.getBoundingClientRect();
+  const area=tip.parentElement.getBoundingClientRect();
+  tip.style.left=(Number(x)/760*svg.width + svg.left-area.left-20)+'px';
+  tip.style.top=(Number(y)/250*svg.height + svg.top-area.top-42)+'px';
+}
+function hideRevenueTooltip(){
+  const tip=document.getElementById('revenueTooltip');
+  if(tip)tip.style.display='none';
+}
+
+function renderAdmin(page=bookingPage){
+ renderRevenueChart(document.getElementById('revenueRange')?.value||7);
+ const bs=getBookings();
+ const totalPages=Math.max(1,Math.ceil(bs.length/BOOKINGS_PER_PAGE));
+ bookingPage=Math.min(Math.max(1,Number(page)||1),totalPages);
+
+ document.getElementById('statBookings').textContent=bs.length;
+ document.getElementById('statRevenue').textContent=money(
+   bs.filter(x=>isPaidStatus(x.status)).reduce((s,x)=>s+Number(x.price)||0,0)
+ );
+
+ const header='<thead><tr><th>Mã</th><th>Khách</th><th>Dịch vụ</th><th>Ngày</th><th>Giá trị</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>';
+
+ function rowsForPage(){
+   if(!bs.length) return '<tr><td colspan="7">Chưa có booking.</td></tr>';
+   const begin=(bookingPage-1)*BOOKINGS_PER_PAGE;
+   const pageRows=bs.slice(begin,begin+BOOKINGS_PER_PAGE);
+   return pageRows.map(b=>bookingRowHtml(b)).join('');
+ }
+
+ const body=header+'<tbody>'+rowsForPage()+'</tbody>';
+ document.getElementById('dashTable').innerHTML=body;
+ document.getElementById('bookingTable').innerHTML=body;
+
+ renderBookingPages('dashPages',totalPages);
+ renderBookingPages('bookingPages',totalPages);
+}
+
+
+function isRoomService(name){
+  const n=(name||'').toLowerCase();
+  return ['resort','hotel','house','phòng','room'].some(k=>n.includes(k));
+}
+function bookingTypeOf(b){
+  if(b && (b.type==='room' || b.type==='tour')) return b.type;
+  return isRoomService(b?.service) ? 'room' : 'tour';
+}
+let servicePage={tour:1,room:1};
+function renderServiceBookings(type,page){
+  const all=getBookings();
+  const filtered=all.filter(b=>bookingTypeOf(b)===type);
+  const per=10;
+  const total=Math.max(1,Math.ceil(filtered.length/per));
+  servicePage[type]=Math.min(Math.max(1,Number(page)||servicePage[type]||1),total);
+  const begin=(servicePage[type]-1)*per;
+  const rows=filtered.slice(begin,begin+per);
+  const tableId=type==='room'?'roomBookingTable':'tourBookingTable';
+  const pageId=type==='room'?'roomBookingPages':'tourBookingPages';
+  const table=document.getElementById(tableId);
+  if(!table)return;
+  table.innerHTML='<thead><tr><th>Mã</th><th>Khách</th><th>Dịch vụ</th><th>Ngày</th><th>Giá trị</th><th>Trạng thái</th><th>Thao tác</th></tr></thead><tbody>'+
+    (rows.length?rows.map(b=>bookingRowHtml(b)).join(''):'<tr><td colspan="7">Chưa có booking.</td></tr>')+
+    '</tbody>';
+  const pg=document.getElementById(pageId);
+  let out=`<button ${servicePage[type]===1?'disabled':''} onclick="renderServiceBookings('${type}',${servicePage[type]-1})">‹</button>`;
+  for(let i=1;i<=total;i++){
+    if(total>7 && i!==1 && i!==total && Math.abs(i-servicePage[type])>2){
+      if(i===2||i===total-1)out+='<span class="page-info">...</span>';
+      continue;
+    }
+    out+=`<button class="${i===servicePage[type]?'active':''}" onclick="renderServiceBookings('${type}',${i})">${i}</button>`;
+  }
+  out+=`<button ${servicePage[type]===total?'disabled':''} onclick="renderServiceBookings('${type}',${servicePage[type]+1})">›</button>`;
+  out+=`<span class="page-info">Trang ${servicePage[type]}/${total} · 10 booking/trang</span>`;
+  pg.innerHTML=out;
+}
+
+function renderBookingPages(id,totalPages){
+ const el=document.getElementById(id);
+ if(!el)return;
+
+ let buttons=`<button ${bookingPage===1?'disabled':''} onclick="renderAdmin(${bookingPage-1})">‹</button>`;
+ for(let i=1;i<=totalPages;i++){
+   // Khi có nhiều trang, chỉ hiện vùng quanh trang hiện tại để giao diện gọn trên iPhone.
+   if(totalPages>7 && i!==1 && i!==totalPages && Math.abs(i-bookingPage)>2){
+     if(i===2 || i===totalPages-1) buttons+=`<span class="page-info">...</span>`;
+     continue;
+   }
+   buttons+=`<button class="${i===bookingPage?'active':''}" onclick="renderAdmin(${i})">${i}</button>`;
+ }
+ buttons+=`<button ${bookingPage===totalPages?'disabled':''} onclick="renderAdmin(${bookingPage+1})">›</button>`;
+ buttons+=`<span class="page-info">Trang ${bookingPage}/${totalPages} · 10 booking/trang</span>`;
+ el.innerHTML=buttons;
+}
+
+function badge(s){
+  let c=' wait';
+  if(s==='Đã thanh toán') c='';
+  if(s==='Khách báo đã thanh toán') c=' wait';
+  if(s==='Đã hủy') c=' cancel';
+  return `<span class="badge${c}">${esc(s)}</span>`;
+}
+function bookingActions(b){
+  let html=`<button class="btn" style="padding:6px 10px;font-size:11px;margin:2px" onclick="showBookingDetail('${b.code}')">Chi tiết</button>`;
+  if(b.status==='Khách báo đã thanh toán' || b.status==='Chờ thanh toán'){
+    html+=`<button class="btn gold" style="padding:6px 10px;font-size:11px;margin:2px" onclick="confirmPaid('${b.code}')">Duyệt TT</button>`;
+  }
+  if(b.status==='Khách báo đã thanh toán'){
+    html+=`<button class="btn" style="padding:6px 10px;font-size:11px;margin:2px" onclick="rejectPayment('${b.code}')">Từ chối</button>`;
+  }
+  if(b.status!=='Đã hủy'){
+    html+=`<button class="btn" style="padding:6px 10px;font-size:11px;margin:2px" onclick="cancelBooking('${b.code}')">Hủy</button>`;
+  }
+  return html;
+}
+function showBookingDetail(code){
+  const b=getBookings().find(x=>x.code===code);
+  if(!b){ toast('Không tìm thấy booking'); return; }
+  const body=document.getElementById('bookingDetailBody');
+  body.innerHTML=`
+    <div class="summary"><b>${esc(b.code)}</b> · ${badge(b.status)}<br><span>${esc(b.service)}</span></div>
+    <div class="booking-detail-grid">
+      <div><label>HỌ TÊN</label><b>${esc(b.name)}</b></div>
+      <div><label>SỐ ĐIỆN THOẠI</label><b>${esc(b.phone||'—')}</b></div>
+      <div><label>EMAIL</label><span>${esc(b.email||'—')}</span></div>
+      <div><label>SỐ KHÁCH</label><span>${esc(b.guests||'—')}</span></div>
+      <div><label>NGÀY ĐI / NHẬN</label><span>${esc(b.date||'—')}</span></div>
+      <div><label>NGÀY VỀ / TRẢ</label><span>${esc(b.date2||'—')}</span></div>
+      <div><label>LOẠI</label><span>${b.type==='room'?'Phòng':'Tour'}</span></div>
+      <div><label>SỐ NGÀY / ĐÊM</label><span>${esc(b.days||'—')}</span></div>
+      <div><label>GIÁ TRỊ</label><b>${money(b.price)}</b></div>
+      <div><label>CHI TIẾT GIÁ</label><span>${esc(b.priceDetail||'—')}</span></div>
+      <div class="full"><label>GHI CHÚ KHÁCH</label><span>${esc(b.note||'Không có')}</span></div>
+      <div><label>TẠO LÚC</label><span>${esc(b.created||b.createdAt||'—')}</span></div>
+      <div><label>BÁO TT LÚC</label><span>${esc(b.paidAt?new Date(b.paidAt).toLocaleString('vi-VN'):'—')}</span></div>
+      <div class="full"><label>GHI CHÚ THANH TOÁN</label><span>${esc(b.paymentNote||'—')}</span></div>
+    </div>`;
+  const acts=document.getElementById('bookingDetailActions');
+  let a='';
+  if(b.status==='Khách báo đã thanh toán'||b.status==='Chờ thanh toán'){
+    a+=`<button class="btn gold" onclick="confirmPaid('${b.code}');closeModal('bookingDetailModal')">✓ Duyệt thanh toán</button>`;
+  }
+  if(b.status==='Khách báo đã thanh toán'){
+    a+=`<button class="btn" onclick="rejectPayment('${b.code}');closeModal('bookingDetailModal')">Từ chối TT</button>`;
+  }
+  if(b.status!=='Đã hủy'){
+    a+=`<button class="btn" onclick="cancelBooking('${b.code}');closeModal('bookingDetailModal')">Hủy booking</button>`;
+  }
+  a+=`<button class="btn" onclick="closeModal('bookingDetailModal')">Đóng</button>`;
+  acts.innerHTML=a;
+  document.getElementById('bookingDetailModal').classList.remove('hidden');
+}
+
+function bookingRowHtml(b){
+  return `<tr>
+    <td><b>${esc(b.code)}</b></td>
+    <td>${esc(b.name)}<br><small class="muted">${esc(b.phone||'')}</small></td>
+    <td>${esc(b.service)}<br><small class="muted">${b.type==='room'?'Phòng':'Tour'} · ${esc(b.guests||'?')} khách</small></td>
+    <td>${esc(b.date||'-')}${b.date2?' → '+esc(b.date2):''}</td>
+    <td>${money(b.price)}</td>
+    <td>${badge(b.status)}</td>
+    <td>${bookingActions(b)}</td>
+  </tr>`;
+}
+
+function renderTopupQueue(){
+  const pending=getBookings().filter(b=>b.status==='Khách báo đã thanh toán');
+  const done=getBookings().filter(b=>b.status==='Đã thanh toán').slice(0,20);
+  const countEl=document.getElementById('topupCount');
+  if(countEl) countEl.textContent=pending.length+' chờ duyệt';
+  const table=document.getElementById('topupTable');
+  if(table){
+    table.innerHTML='<thead><tr><th>Mã</th><th>Khách / SĐT</th><th>Dịch vụ</th><th>Số tiền</th><th>Báo TT lúc</th><th>Thao tác</th></tr></thead><tbody>'+
+      (pending.length?pending.map(b=>`<tr>
+        <td><b>${esc(b.code)}</b></td>
+        <td>${esc(b.name)}<br><small>${esc(b.phone||'')}</small><br><small class="muted">${esc(b.email||'')}</small></td>
+        <td>${esc(b.service)}<br><small>${esc(b.date||'')} → ${esc(b.date2||'')}</small></td>
+        <td><b>${money(b.price)}</b></td>
+        <td>${b.paidAt?esc(new Date(b.paidAt).toLocaleString('vi-VN')):'—'}</td>
+        <td>
+          <button class="btn gold" style="padding:6px 10px;font-size:11px;margin:2px" onclick="confirmPaid('${b.code}')">Duyệt nạp tiền</button>
+          <button class="btn" style="padding:6px 10px;font-size:11px;margin:2px" onclick="showBookingDetail('${b.code}')">Chi tiết</button>
+          <button class="btn" style="padding:6px 10px;font-size:11px;margin:2px" onclick="rejectPayment('${b.code}')">Từ chối</button>
+        </td>
+      </tr>`).join(''):'<tr><td colspan="6">Không có yêu cầu nạp tiền chờ duyệt.</td></tr>')+
+      '</tbody>';
+  }
+  const doneT=document.getElementById('topupDoneTable');
+  if(doneT){
+    doneT.innerHTML='<thead><tr><th>Mã</th><th>Khách</th><th>Dịch vụ</th><th>Số tiền</th><th>Duyệt lúc</th></tr></thead><tbody>'+
+      (done.length?done.map(b=>`<tr>
+        <td>${esc(b.code)}</td>
+        <td>${esc(b.name)} · ${esc(b.phone||'')}</td>
+        <td>${esc(b.service)}</td>
+        <td>${money(b.price)}</td>
+        <td>${b.approvedAt?esc(new Date(b.approvedAt).toLocaleString('vi-VN')):(b.paidAt?esc(new Date(b.paidAt).toLocaleString('vi-VN')):'—')}</td>
+      </tr>`).join(''):'<tr><td colspan="5">Chưa có giao dịch đã duyệt.</td></tr>')+
+      '</tbody>';
+  }
+}
+
+function renderHistory(filter){
+  const box=document.getElementById('histResults');
+  if(!box) return;
+  if(filter) window._histFilter=filter;
+  const mode=window._histFilter||'all';
+  document.querySelectorAll('#histTabs button[data-f]').forEach(btn=>{
+    btn.classList.toggle('active', btn.dataset.f===mode);
+  });
+  // admin history table nếu có
+  if(document.getElementById('adminHistTable')) renderAdminHistory(mode);
+
+  const phone=(document.getElementById('histPhone')?.value||'').trim();
+  const code=(document.getElementById('histCode')?.value||'').trim().toUpperCase();
+  let list=getBookings().slice();
+
+  if(mode==='pending') list=list.filter(b=>b.status==='Khách báo đã thanh toán');
+  else if(mode==='wait') list=list.filter(b=>b.status==='Chờ thanh toán');
+  else if(mode==='paid') list=list.filter(b=>b.status==='Đã thanh toán');
+
+  if(code) list=list.filter(b=>String(b.code||'').toUpperCase().includes(code));
+  if(phone){
+    const p=phone.replace(/[^0-9+]/g,'');
+    list=list.filter(b=>{
+      const bp=String(b.phone||'').replace(/[^0-9+]/g,'');
+      return bp.includes(p) || String(b.phone||'').includes(phone);
+    });
+  } else {
+    // Nếu đã đăng nhập khách và không gõ bộ lọc → chỉ hiện đơn của họ
+    const sess=getCustomerSession && getCustomerSession();
+    if(sess && (sess.phone||sess.email)){
+      const p=String(sess.phone||'').replace(/[^0-9+]/g,'');
+      const em=String(sess.email||'').toLowerCase();
+      list=list.filter(b=>{
+        const bp=String(b.phone||'').replace(/[^0-9+]/g,'');
+        const be=String(b.email||'').toLowerCase();
+        return (p && bp.includes(p)) || (em && be===em);
+      });
+    }
+  }
+
+  if(!list.length){
+    box.innerHTML='<p class="muted" style="padding:12px 0">Chưa có đơn nào'+(mode==='pending'?' chờ duyệt nạp tiền':'')+'. Hãy đặt dịch vụ và thanh toán QR.</p>';
+    return;
+  }
+
+  box.innerHTML=list.map(b=>{
+    const pending=b.status==='Khách báo đã thanh toán';
+    const waitPay=b.status==='Chờ thanh toán';
+    let payBlock='';
+    if(pending){
+      payBlock=`<div class="pay-info">
+        <b>⏳ Nạp tiền chờ duyệt</b><br>
+        Mã booking: <b>${esc(b.code)}</b><br>
+        Số tiền: <b>${money(b.price)}</b><br>
+        Báo TT lúc: ${b.paidAt?esc(new Date(b.paidAt).toLocaleString('vi-VN')):'—'}<br>
+        ${b.paymentNote?esc(b.paymentNote):'Khách đã báo chuyển khoản QR'} — Admin sẽ duyệt trong mục Nạp tiền.
+      </div>`;
+    }else if(waitPay){
+      payBlock=`<div class="pay-info" style="border-color:#c5d0da;background:#f7f9fb">
+        <b>Chờ thanh toán</b><br>
+        Mã: <b>${esc(b.code)}</b> · Số tiền: <b>${money(b.price)}</b><br>
+        <button class="btn gold" style="margin-top:8px;padding:8px 12px;font-size:12px" onclick='reopenPayment(${JSON.stringify(b.code)})'>Thanh toán QR ngay</button>
+      </div>`;
+    }else if(b.status==='Đã thanh toán'){
+      payBlock=`<div class="pay-info" style="border-color:#9dceb0;background:#f3faf6">
+        <b>✓ Đã thanh toán / đã duyệt nạp tiền</b><br>
+        Mã: <b>${esc(b.code)}</b> · ${money(b.price)}
+        ${b.approvedAt?' · Duyệt: '+esc(new Date(b.approvedAt).toLocaleString('vi-VN')):''}
+      </div>`;
+    }
+    return `<div class="hist-item${pending?' pending':''}">
+      <div class="top">
+        <div><b>${esc(b.code)}</b> · ${badge(b.status)}</div>
+        <div><b>${money(b.price)}</b></div>
+      </div>
+      <div style="margin-top:8px;font-size:14px">
+        <div><b>${esc(b.service)}</b> <span class="muted">(${b.type==='room'?'Phòng':'Tour'})</span></div>
+        <div class="muted" style="margin-top:4px">
+          ${esc(b.name||'')} · ${esc(b.phone||'')} · ${esc(b.guests||'?')} khách<br>
+          ${esc(b.date||'—')}${b.date2?' → '+esc(b.date2):''}
+          ${b.note?'<br>Ghi chú: '+esc(b.note):''}
+        </div>
+      </div>
+      ${payBlock}
+    </div>`;
+  }).join('');
+}
+function lookupHistory(){ renderHistory(); }
+function reopenPayment(code){
+  const b=getBookings().find(x=>x.code===code);
+  if(!b){ toast('Không tìm thấy booking'); return; }
+  currentBooking=b;
+  showPayment(b);
+}
+
+
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function loadPayment(){
+ const p=getPay();
+ setBank.value=p.bank;setOwner.value=p.owner;setAccount.value=p.account;setNote.value=p.note;setQr.value=p.qr;
+ qrPreview.src=p.qr;qrPreview.classList.remove('hidden');
+}
+function savePayment(){
+ const p={bank:setBank.value.trim()||'Ngân hàng',owner:setOwner.value.trim()||'Chủ tài khoản',account:setAccount.value.trim()||'Số tài khoản',note:setNote.value.trim()||'VISTA',qr:setQr.value.trim()||defaultPay.qr};
+ localStorage.setItem(KEY_PAY,JSON.stringify(p));qrPreview.src=p.qr;qrPreview.classList.remove('hidden');toast('Đã lưu tài khoản thanh toán.');
+}
+
+/* ===== REVIEWS ===== */
+const KEY_REV='vista_reviews_v1';
+const defaultReviews=[
+  {id:'r1',name:'Minh Anh',place:'Tour Hạ Long',stars:5,content:'Một chuyến đi được chuẩn bị rất chỉn chu. Mọi thứ vừa đủ — từ khách sạn, lịch trình đến những quán ăn địa phương.',date:'2026-08-12',visible:true,image:''},
+  {id:'r2',name:'Hoàng Nam',place:'Ocean Pearl Resort',stars:5,content:'Resort đẹp, view biển tuyệt. Nhân viên hỗ trợ nhiệt tình, sẽ quay lại.',date:'2026-08-20',visible:true,image:''},
+  {id:'r3',name:'Lan Phương',place:'Tour Đà Nẵng — Hội An',stars:4,content:'Lịch trình hợp lý, hướng dẫn viên vui tính. Ăn uống địa phương rất ngon.',date:'2026-09-01',visible:true,image:''}
+];
+let editingReviewId=null;
+let pubReviewImageData='';
+let adminReviewImageData='';
+let pubStarValue=5;
+
+function getReviews(){
+  try{
+    const raw=localStorage.getItem(KEY_REV);
+    if(!raw) return defaultReviews.slice();
+    return JSON.parse(raw);
+  }catch(e){ return defaultReviews.slice(); }
+}
+function setReviews(arr){ localStorage.setItem(KEY_REV, JSON.stringify(arr)); }
+function starsHtml(n){
+  n=Math.max(1,Math.min(5,Number(n)||5));
+  return '★'.repeat(n)+'☆'.repeat(5-n);
+}
+
+/* --- nén ảnh base64 để lưu localStorage --- */
+function compressImageFile(file, maxW=900, quality=0.72){
+  return new Promise((resolve,reject)=>{
+    if(!file || !file.type.startsWith('image/')){ reject(new Error('File không hợp lệ')); return; }
+    if(file.size>8*1024*1024){ reject(new Error('Ảnh tối đa 8MB')); return; }
+    const reader=new FileReader();
+    reader.onerror=()=>reject(new Error('Không đọc được ảnh'));
+    reader.onload=()=>{
+      const img=new Image();
+      img.onload=()=>{
+        let w=img.width, h=img.height;
+        if(w>maxW){ h=Math.round(h*maxW/w); w=maxW; }
+        const canvas=document.createElement('canvas');
+        canvas.width=w; canvas.height=h;
+        const ctx=canvas.getContext('2d');
+        ctx.drawImage(img,0,0,w,h);
+        resolve(canvas.toDataURL('image/jpeg', quality));
+      };
+      img.onerror=()=>reject(new Error('Ảnh lỗi'));
+      img.src=reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function pickPubStar(n){
+  pubStarValue=n;
+  document.getElementById('pubRvStars').value=String(n);
+  document.querySelectorAll('#pubStarPick button').forEach(btn=>{
+    btn.classList.toggle('on', Number(btn.dataset.s)<=n);
+  });
+}
+async function previewPubReviewImage(input){
+  const file=input.files&&input.files[0];
+  if(!file) return;
+  try{
+    pubReviewImageData=await compressImageFile(file);
+    const img=document.getElementById('pubRvPreview');
+    img.src=pubReviewImageData;
+    img.classList.add('show');
+    document.getElementById('pubRvClearImg').style.display='inline-block';
+  }catch(err){
+    toast(err.message||'Không tải được ảnh');
+    input.value='';
+  }
+}
+function clearPubReviewImage(){
+  pubReviewImageData='';
+  const img=document.getElementById('pubRvPreview');
+  if(img){ img.src=''; img.classList.remove('show'); }
+  const inp=document.getElementById('pubRvImage');
+  if(inp) inp.value='';
+  const btn=document.getElementById('pubRvClearImg');
+  if(btn) btn.style.display='none';
+}
+async function previewAdminReviewImage(input){
+  const file=input.files&&input.files[0];
+  if(!file) return;
+  try{
+    adminReviewImageData=await compressImageFile(file);
+    const img=document.getElementById('rvPreview');
+    img.src=adminReviewImageData;
+    img.classList.add('show');
+    document.getElementById('rvClearImg').style.display='inline-block';
+  }catch(err){
+    toast(err.message||'Không tải được ảnh');
+    input.value='';
+  }
+}
+function clearAdminReviewImage(){
+  adminReviewImageData='';
+  const img=document.getElementById('rvPreview');
+  if(img){ img.src=''; img.classList.remove('show'); }
+  const inp=document.getElementById('rvImage');
+  if(inp) inp.value='';
+  const btn=document.getElementById('rvClearImg');
+  if(btn) btn.style.display='none';
+}
+
+function submitPublicReview(){
+  const code=(document.getElementById('pubRvCode').value||'').trim().toUpperCase();
+  const name=(document.getElementById('pubRvName').value||'').trim();
+  const content=(document.getElementById('pubRvContent').value||'').trim();
+  const stars=Number(document.getElementById('pubRvStars').value)||5;
+  if(!code){ toast('Vui lòng nhập mã booking.'); return; }
+  if(!name){ toast('Vui lòng nhập họ tên.'); return; }
+  if(!content || content.length<10){ toast('Mô tả trải nghiệm ít nhất 10 ký tự.'); return; }
+
+  const bookings=getBookings();
+  const booking=bookings.find(b=>String(b.code||'').toUpperCase()===code);
+  if(!booking){
+    toast('Không tìm thấy mã booking. Hãy đặt dịch vụ trước rồi đánh giá.');
+    return;
+  }
+  // Cho phép đánh giá khi đã có booking (kể cả chờ TT); ưu tiên đã TT
+  const list=getReviews();
+  if(list.some(r=>String(r.bookingCode||'').toUpperCase()===code)){
+    toast('Mã booking này đã gửi đánh giá rồi.');
+    return;
+  }
+  const item={
+    id:'r'+Date.now(),
+    name,
+    place:booking.service||'',
+    bookingCode:booking.code,
+    stars,
+    content,
+    image:pubReviewImageData||'',
+    date:new Date().toISOString().slice(0,10),
+    visible:true,
+    fromCustomer:true
+  };
+  list.unshift(item);
+  try{
+    setReviews(list);
+  }catch(e){
+    // localStorage đầy vì ảnh quá lớn
+    item.image='';
+    try{ setReviews(list); toast('Ảnh quá lớn, đã lưu đánh giá không kèm ảnh.'); }
+    catch(e2){ toast('Không lưu được (bộ nhớ trình duyệt đầy).'); return; }
+  }
+  document.getElementById('pubRvCode').value='';
+  document.getElementById('pubRvName').value='';
+  document.getElementById('pubRvContent').value='';
+  clearPubReviewImage();
+  pickPubStar(5);
+  renderHomeReviews();
+  toast('Cảm ơn bạn! Đánh giá đã được gửi.');
+}
+
+function renderHomeReviews(){
+  const grid=document.getElementById('reviewsGrid');
+  if(!grid) return;
+  const list=getReviews().filter(r=>r.visible!==false);
+  if(!list.length){
+    grid.innerHTML='<div class="empty-state" style="grid-column:1/-1">Chưa có đánh giá. Hãy là người đầu tiên chia sẻ!</div>';
+    return;
+  }
+  grid.innerHTML=list.map(r=>`
+    <div class="review-card">
+      <div class="review-stars">${starsHtml(r.stars)}</div>
+      ${r.image?`<img class="review-img" src="${r.image}" alt="Ảnh trải nghiệm">`:''}
+      <p>"${esc(r.content)}"</p>
+      <div class="who">
+        <div class="avatar">${esc((r.name||'?')[0].toUpperCase())}</div>
+        <div>
+          <b>${esc(r.name)}</b>
+          <div class="review-meta">${esc(r.place||'')} · ${esc(r.date||'')}${r.bookingCode?' · '+esc(r.bookingCode):''}</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderReviewsAdmin(){
+  const table=document.getElementById('reviewAdminTable');
+  if(!table) return;
+  const list=getReviews();
+  table.innerHTML='<thead><tr><th>Ảnh</th><th>Khách</th><th>Gói / Mã</th><th>Sao</th><th>Nội dung</th><th>Ngày</th><th>Hiển thị</th><th>Thao tác</th></tr></thead><tbody>'+
+    (list.length?list.map(r=>`<tr>
+      <td>${r.image?`<img class="review-admin-thumb" src="${r.image}" alt="">`:'—'}</td>
+      <td>${esc(r.name)}${r.fromCustomer?' <small class="muted">(KH)</small>':''}</td>
+      <td>${esc(r.place||'')}${r.bookingCode?'<br><small>'+esc(r.bookingCode)+'</small>':''}</td>
+      <td class="review-stars">${starsHtml(r.stars)}</td>
+      <td style="max-width:220px">${esc(r.content)}</td>
+      <td>${esc(r.date||'')}</td>
+      <td>${r.visible===false?'Ẩn':'Hiện'}</td>
+      <td>
+        <button class="btn" style="padding:6px 10px;font-size:11px;margin:2px" onclick="editReview('${r.id}')">Sửa</button>
+        <button class="btn" style="padding:6px 10px;font-size:11px;margin:2px" onclick="toggleReviewVisible('${r.id}')">${r.visible===false?'Hiện':'Ẩn'}</button>
+        <button class="btn" style="padding:6px 10px;font-size:11px;margin:2px" onclick="deleteReview('${r.id}')">Xóa</button>
+      </td>
+    </tr>`).join(''):'<tr><td colspan="8">Chưa có đánh giá.</td></tr>')+
+    '</tbody>';
+}
+function showReviewForm(){
+  editingReviewId=null;
+  adminReviewImageData='';
+  document.getElementById('reviewFormBox').classList.remove('hidden');
+  document.getElementById('rvName').value='';
+  document.getElementById('rvPlace').value='';
+  document.getElementById('rvStars').value='5';
+  document.getElementById('rvContent').value='';
+  document.getElementById('rvDate').value=new Date().toISOString().slice(0,10);
+  clearAdminReviewImage();
+}
+function hideReviewForm(){
+  document.getElementById('reviewFormBox').classList.add('hidden');
+  editingReviewId=null;
+  clearAdminReviewImage();
+}
+function saveReview(){
+  const name=(document.getElementById('rvName').value||'').trim();
+  const content=(document.getElementById('rvContent').value||'').trim();
+  if(!name||!content){ toast('Vui lòng nhập tên và nội dung đánh giá.'); return; }
+  const item={
+    id: editingReviewId || ('r'+Date.now()),
+    name,
+    place:(document.getElementById('rvPlace').value||'').trim(),
+    stars:Number(document.getElementById('rvStars').value)||5,
+    content,
+    date:document.getElementById('rvDate').value||new Date().toISOString().slice(0,10),
+    visible:true,
+    image:adminReviewImageData||''
+  };
+  let list=getReviews();
+  if(editingReviewId){
+    const i=list.findIndex(x=>x.id===editingReviewId);
+    if(i>=0){
+      item.visible=list[i].visible!==false;
+      item.bookingCode=list[i].bookingCode||'';
+      item.fromCustomer=!!list[i].fromCustomer;
+      if(!adminReviewImageData && list[i].image) item.image=list[i].image;
+      list[i]=item;
+    } else list.unshift(item);
+  }else list.unshift(item);
+  try{ setReviews(list); }
+  catch(e){
+    item.image='';
+    setReviews(list);
+    toast('Ảnh quá lớn, đã lưu không kèm ảnh.');
+  }
+  hideReviewForm();
+  renderReviewsAdmin();
+  renderHomeReviews();
+  toast('Đã lưu đánh giá.');
+}
+function editReview(id){
+  const r=getReviews().find(x=>x.id===id);
+  if(!r) return;
+  editingReviewId=id;
+  adminReviewImageData=r.image||'';
+  document.getElementById('reviewFormBox').classList.remove('hidden');
+  document.getElementById('rvName').value=r.name||'';
+  document.getElementById('rvPlace').value=r.place||'';
+  document.getElementById('rvStars').value=String(r.stars||5);
+  document.getElementById('rvContent').value=r.content||'';
+  document.getElementById('rvDate').value=r.date||'';
+  const img=document.getElementById('rvPreview');
+  if(r.image){
+    img.src=r.image; img.classList.add('show');
+    document.getElementById('rvClearImg').style.display='inline-block';
+  }else clearAdminReviewImage();
+}
+function toggleReviewVisible(id){
+  const list=getReviews();
+  const i=list.findIndex(x=>x.id===id);
+  if(i<0) return;
+  list[i].visible=list[i].visible===false;
+  setReviews(list);
+  renderReviewsAdmin();
+  renderHomeReviews();
+}
+function deleteReview(id){
+  if(!confirm('Xóa đánh giá này?')) return;
+  setReviews(getReviews().filter(x=>x.id!==id));
+  renderReviewsAdmin();
+  renderHomeReviews();
+  toast('Đã xóa đánh giá.');
+}
+
+
+function renderAdminHistory(mode){
+  const table=document.getElementById('adminHistTable');
+  if(!table) return;
+  if(mode) window._adminHistFilter=mode;
+  const f=window._adminHistFilter||'all';
+  let list=getBookings().slice();
+  if(f==='pending') list=list.filter(b=>b.status==='Khách báo đã thanh toán');
+  else if(f==='wait') list=list.filter(b=>b.status==='Chờ thanh toán');
+  else if(f==='paid') list=list.filter(b=>b.status==='Đã thanh toán');
+  table.innerHTML='<thead><tr><th>Mã</th><th>Khách / SĐT</th><th>Dịch vụ</th><th>Ngày</th><th>Giá</th><th>Trạng thái / Nạp tiền</th><th>Thao tác</th></tr></thead><tbody>'+
+    (list.length?list.map(b=>{
+      let pay='';
+      if(b.status==='Khách báo đã thanh toán') pay='<br><small style="color:#8b651e">⏳ Chờ duyệt nạp tiền</small>';
+      else if(b.status==='Đã thanh toán') pay='<br><small style="color:#287245">✓ Đã duyệt</small>';
+      else if(b.status==='Chờ thanh toán') pay='<br><small class="muted">Chưa thanh toán</small>';
+      return `<tr>
+        <td><b>${esc(b.code)}</b></td>
+        <td>${esc(b.name)}<br><small>${esc(b.phone||'')}</small></td>
+        <td>${esc(b.service)}</td>
+        <td>${esc(b.date||'—')}${b.date2?' → '+esc(b.date2):''}</td>
+        <td>${money(b.price)}</td>
+        <td>${badge(b.status)}${pay}</td>
+        <td>${bookingActions(b)}</td>
+      </tr>`;
+    }).join(''):'<tr><td colspan="7">Chưa có dữ liệu.</td></tr>')+
+    '</tbody>';
+}
+
+
+/* ===== ADMIN USERS ===== */
+
+/* ===== CUSTOMER AUTH (không có quyền admin) ===== */
+const KEY_CUSTOMERS='vista_customers_v1';
+const KEY_CUSTOMER_SESSION='vista_customer_session';
+
+function getCustomers(){
+  try{ return JSON.parse(localStorage.getItem(KEY_CUSTOMERS)||'[]'); }
+  catch(e){ return []; }
+}
+function setCustomers(arr){ localStorage.setItem(KEY_CUSTOMERS, JSON.stringify(arr)); }
+function getCustomerSession(){
+  try{ return JSON.parse(localStorage.getItem(KEY_CUSTOMER_SESSION)||'null'); }
+  catch(e){ return null; }
+}
+async function getPublicIP(){
+  try{
+    const controller=new AbortController();
+    const timer=setTimeout(()=>controller.abort(),5000);
+    const res=await fetch('https://api.ipify.org?format=json',{cache:'no-store',signal:controller.signal});
+    clearTimeout(timer);
+    if(!res.ok) throw new Error('IP request failed');
+    const data=await res.json();
+    return String(data.ip||'').trim()||'Không xác định';
+  }catch(e){
+    return 'Không xác định';
+  }
+}
+function setCustomerSession(user){
+  if(user) localStorage.setItem(KEY_CUSTOMER_SESSION, JSON.stringify({id:user.id,name:user.name,email:user.email,phone:user.phone,ip:user.ip||'Không xác định'}));
+  else localStorage.removeItem(KEY_CUSTOMER_SESSION);
+}
+function findCustomerByLogin(id){
+  const q=String(id||'').trim().toLowerCase();
+  if(!q) return null;
+  return getCustomers().find(c=>
+    String(c.email||'').toLowerCase()===q ||
+    String(c.phone||'').replace(/\s+/g,'')===q.replace(/\s+/g,'')
+  )||null;
+}
+
+function openAuthModal(tab){
+  switchAuthTab(tab||'login');
+  document.getElementById('customerLoginError').textContent='';
+  document.getElementById('customerRegError').textContent='';
+  document.getElementById('authModal').classList.remove('hidden');
+}
+function switchAuthTab(tab){
+  const isLogin=tab!=='register';
+  document.getElementById('authTabLogin').classList.toggle('active', isLogin);
+  document.getElementById('authTabRegister').classList.toggle('active', !isLogin);
+  document.getElementById('authLoginBox').classList.toggle('hidden', !isLogin);
+  document.getElementById('authRegisterBox').classList.toggle('hidden', isLogin);
+  document.getElementById('authTitle').textContent=isLogin?'Đăng nhập':'Đăng ký tài khoản';
+}
+async function customerRegister(){
+  const name=(document.getElementById('regName').value||'').trim();
+  const phone=(document.getElementById('regPhone').value||'').trim();
+  const email=(document.getElementById('regEmail').value||'').trim().toLowerCase();
+  const p1=document.getElementById('regPass').value||'';
+  const p2=document.getElementById('regPass2').value||'';
+  const err=document.getElementById('customerRegError');
+  err.textContent='';
+  if(!name||!phone||!email){ err.textContent='Vui lòng điền đầy đủ họ tên, SĐT và email.'; return; }
+  if(p1.length<4){ err.textContent='Mật khẩu tối thiểu 4 ký tự.'; return; }
+  if(p1!==p2){ err.textContent='Hai mật khẩu không khớp.'; return; }
+  if(findCustomerByLogin(email)||findCustomerByLogin(phone)){
+    err.textContent='Email hoặc SĐT đã được đăng ký.'; return;
+  }
+  // Không cho trùng username admin
+  if(typeof findAdminUser==='function' && (findAdminUser(email)||findAdminUser(phone))){
+    err.textContent='Không thể dùng thông tin này.'; return;
+  }
+  // Mỗi khách hàng được cấp một ID thành viên duy nhất ngay khi đăng ký.
+  // ID không thay đổi khi đăng nhập lại và được dùng để quản lý tài khoản/booking.
+  const ip=await getPublicIP();
+  const customersNow=getCustomers();
+  let memberId='';
+  do{
+    memberId='VT-'+Math.random().toString(36).slice(2,10).toUpperCase();
+  }while(customersNow.some(c=>String(c.id||'').toUpperCase()===memberId));
+  const user={
+    id:memberId,
+    name, phone, email,
+    ip,
+    password:p1,
+    role:'customer', // luôn là khách — không bao giờ admin
+    createdAt:new Date().toISOString()
+  };
+  const list=getCustomers();
+  list.push(user);
+  setCustomers(list);
+  setCustomerSession(user);
+  closeModal('authModal');
+  renderUserAuthUI();
+  toast('Đăng ký thành công. Xin chào '+name+'!');
+  resumePendingBooking();
+}
+function customerLogin(){
+  const id=(document.getElementById('loginId').value||'').trim();
+  const pass=document.getElementById('loginPass').value||'';
+  const err=document.getElementById('customerLoginError');
+  err.textContent='';
+  const user=findCustomerByLogin(id);
+  if(!user || user.password!==pass){
+    err.textContent='Sai email/SĐT hoặc mật khẩu.';
+    return;
+  }
+  if(user.locked){
+    err.textContent='Tài khoản khách đã bị khóa.';
+    return;
+  }
+  setCustomerSession(user);
+  closeModal('authModal');
+  renderUserAuthUI();
+  fillBookingFromCustomer();
+  if(typeof renderHistory==='function') renderHistory();
+  toast('Đăng nhập thành công. Xin chào '+user.name+'!');
+  resumePendingBooking();
+}
+function customerLogout(){
+  setCustomerSession(null);
+  renderUserAuthUI();
+  if(typeof renderHistory==='function') renderHistory();
+  toast('Đã đăng xuất.');
+}
+function renderUserAuthUI(){
+  const s=getCustomerSession();
+  const htmlLogged=`<div class="user-chip" title="ID thành viên: ${esc(s&&s.id||'')}"><div class="u-avatar">${esc((s&&s.name||'?')[0].toUpperCase())}</div><span class="u-name">${esc(s&&s.name||'')}</span><span style="font-size:10px;opacity:.82">${esc(s&&s.id||'')}</span>
+      <button class="btn-ghost" style="padding:6px 10px;font-size:12px" onclick="customerLogout()">Đăng xuất</button></div>`;
+  const htmlGuest=`<button class="btn-ghost" onclick="openAuthModal('login')">Tài khoản</button>`;
+  const box=document.getElementById('userAuthArea');
+  if(box) box.innerHTML=s?htmlLogged:htmlGuest;
+  const box2=document.getElementById('userAuthAreaHistory');
+  if(box2) box2.innerHTML=s?htmlLogged:htmlGuest;
+  updateAdminButtonVisibility();
+}
+function updateAdminButtonVisibility(){
+  // Nút Admin luôn ẩn với mọi thành viên / khách — chỉ vào bằng cổng riêng
+  const adminBtn=document.getElementById('floatAdminBtn')||document.querySelector('.float-admin');
+  if(!adminBtn) return;
+  adminBtn.classList.add('member-hide');
+  adminBtn.setAttribute('hidden','hidden');
+  adminBtn.style.display='none';
+}
+function fillBookingFromCustomer(){
+  const s=getCustomerSession();
+  if(!s) return;
+  const n=document.getElementById('customerName');
+  const p=document.getElementById('customerPhone');
+  const e=document.getElementById('customerEmail');
+  if(n && !n.value) n.value=s.name||'';
+  if(p && !p.value) p.value=s.phone||'';
+  if(e && !e.value) e.value=s.email||'';
+}
+
+
+const KEY_USERS='vista_admin_users_v1';
+function defaultAdminUsers(){
+  // Tài khoản quản trị viên duy nhất (không dùng cho khách đăng ký)
+  return [{username:'admin',password:'123456',locked:false,role:'owner'}];
+}
+function ensureOwnerAdmin(){
+  const owner={username:'admin',password:'123456',locked:false,role:'owner'};
+  let list=[];
+  try{ list=JSON.parse(localStorage.getItem(KEY_USERS)||'[]'); }catch(e){ list=[]; }
+  if(!Array.isArray(list)) list=[];
+  const i=list.findIndex(x=>String(x.username).toLowerCase()==='admin');
+  if(i<0){
+    // thay toàn bộ bằng owner duy nhất lần đầu
+    list=[owner];
+  }else{
+    list[i]={...list[i],...owner,password:list[i].password||owner.password,role:'owner',locked:false};
+    // chỉ giữ owner + các admin phụ nếu có, loại user trùng customer
+  }
+  // đảm bảo luôn có owner
+  if(!list.some(x=>x.role==='owner')) list.unshift(owner);
+  localStorage.setItem(KEY_USERS, JSON.stringify(list));
+  return list;
+}
+function getAdminUsers(){
+  try{
+    return ensureOwnerAdmin();
+  }catch(e){ return defaultAdminUsers(); }
+}
+function setAdminUsers(arr){ localStorage.setItem(KEY_USERS, JSON.stringify(arr)); }
+function findAdminUser(username){
+  const u=String(username||'').trim().toLowerCase();
+  return getAdminUsers().find(x=>String(x.username).toLowerCase()===u)||null;
+}
+function currentAdminUsername(){
+  return localStorage.getItem('vista_admin_user')||'admin';
+}
+function renderUsersAdmin(){
+  const table=document.getElementById('usersTable');
+  if(!table) return;
+  const me=currentAdminUsername();
+  const nameEl=document.getElementById('currentAdminName');
+  if(nameEl) nameEl.textContent=me;
+  const admins=getAdminUsers();
+  const customers=getCustomers();
+  let html=`<thead><tr><th>Tài khoản</th><th>Thông tin</th><th>IP mạng</th><th>Vai trò</th><th>Trạng thái</th><th>Ngày đăng ký</th><th>Thao tác</th></tr></thead><tbody>`;
+  admins.forEach(u=>{
+    const locked=!!u.locked, isMe=u.username===me;
+    html+=`<tr><td><b>${esc(u.username)}</b>${isMe?' <small class="muted">(bạn)</small>':''}</td><td><span class="muted">Tài khoản quản trị</span></td><td><span class="muted">—</span></td><td><b>${esc(u.role||'admin')}</b></td><td class="${locked?'user-status-lock':'user-status-ok'}">${locked?'🔒 Đã khóa':'● Đang mở'}</td><td><span class="muted">Admin</span></td><td><button class="btn" style="padding:6px 10px;font-size:11px;margin:2px" onclick="promptChangeUserPassword('${esc(u.username)}')">Đổi MK</button>${locked?`<button class="btn gold" style="padding:6px 10px;font-size:11px;margin:2px" onclick="setUserLocked('${esc(u.username)}',false)">Mở khóa</button>`:(isMe?'':`<button class="btn" style="padding:6px 10px;font-size:11px;margin:2px" onclick="setUserLocked('${esc(u.username)}',true)">Khóa</button>`)}${u.role==='owner'||isMe?'':`<button class="btn" style="padding:6px 10px;font-size:11px;margin:2px" onclick="deleteAdminUser('${esc(u.username)}')">Xóa</button>`}</td></tr>`;
+  });
+  customers.forEach(c=>{
+    const locked=!!c.locked;
+    let createdDate='';
+    if(c.createdAt){try{createdDate=new Date(c.createdAt).toLocaleString('vi-VN')}catch(e){}}
+    html+=`<tr><td><b>${esc(c.name||'Chưa có tên')}</b><br><small class="muted">ID: ${esc(c.id||'')}</small></td><td><div>📧 ${esc(c.email||'')}</div><div>📱 ${esc(c.phone||'')}</div></td><td><b title="IP public tại thời điểm đăng ký">🌐 ${esc(c.ip||'Không xác định')}</b></td><td><b style="color:#287245">👤 Khách hàng</b></td><td class="${locked?'user-status-lock':'user-status-ok'}">${locked?'🔒 Đã khóa':'● Đang hoạt động'}</td><td>${esc(createdDate)}</td><td><button class="btn" style="padding:6px 10px;font-size:11px;margin:2px" onclick="changeCustomerPassword('${esc(c.id)}')">Đổi MK</button>${locked?`<button class="btn gold" style="padding:6px 10px;font-size:11px;margin:2px" onclick="setCustomerLocked('${esc(c.id)}',false)">Mở khóa</button>`:`<button class="btn" style="padding:6px 10px;font-size:11px;margin:2px" onclick="setCustomerLocked('${esc(c.id)}',true)">Khóa</button>`}<button class="btn" style="padding:6px 10px;font-size:11px;margin:2px" onclick="deleteCustomer('${esc(c.id)}')">Xóa</button></td></tr>`;
+  });
+  table.innerHTML=html+'</tbody>';
+}
+
+function findCustomerById(id){return getCustomers().find(c=>String(c.id)===String(id))||null;}
+function setCustomerLocked(id,locked){
+  const list=getCustomers(), i=list.findIndex(c=>String(c.id)===String(id));
+  if(i<0){toast('Không tìm thấy tài khoản.');return;}
+  list[i].locked=!!locked; setCustomers(list);
+  const session=getCustomerSession();
+  if(locked&&session&&String(session.id)===String(id)){setCustomerSession(null);renderUserAuthUI();}
+  renderUsersAdmin(); toast(locked?'Đã khóa tài khoản khách.':'Đã mở khóa tài khoản khách.');
+}
+function deleteCustomer(id){
+  const customer=findCustomerById(id);
+  if(!customer){toast('Không tìm thấy tài khoản.');return;}
+  if(!confirm('Xóa tài khoản "'+(customer.name||customer.email)+'"?')) return;
+  setCustomers(getCustomers().filter(c=>String(c.id)!==String(id)));
+  const session=getCustomerSession();
+  if(session&&String(session.id)===String(id)){setCustomerSession(null);renderUserAuthUI();}
+  renderUsersAdmin(); toast('Đã xóa tài khoản khách.');
+}
+function changeCustomerPassword(id){
+  const customer=findCustomerById(id);
+  if(!customer){toast('Không tìm thấy tài khoản.');return;}
+  const password=prompt('Nhập mật khẩu mới cho '+(customer.name||customer.email)+' (tối thiểu 4 ký tự):');
+  if(password===null)return;
+  if(password.length<4){toast('Mật khẩu tối thiểu 4 ký tự.');return;}
+  const list=getCustomers(), i=list.findIndex(c=>String(c.id)===String(id));
+  if(i<0)return; list[i].password=password; setCustomers(list); renderUsersAdmin(); toast('Đã đổi mật khẩu tài khoản khách.');
+}
+
+function setUserLocked(username, locked){
+  const list=getAdminUsers();
+  const i=list.findIndex(x=>x.username===username);
+  if(i<0) return;
+  if(list[i].role==='owner' && locked){ toast('Không thể khóa tài khoản chủ.'); return; }
+  if(username===currentAdminUsername() && locked){ toast('Không thể tự khóa chính mình.'); return; }
+  list[i].locked=!!locked;
+  setAdminUsers(list);
+  renderUsersAdmin();
+  toast(locked?('Đã khóa '+username):('Đã mở khóa '+username));
+}
+function deleteAdminUser(username){
+  if(username===currentAdminUsername()){ toast('Không thể xóa tài khoản đang dùng.'); return; }
+  if(!confirm('Xóa tài khoản '+username+'?')) return;
+  setAdminUsers(getAdminUsers().filter(x=>x.username!==username));
+  renderUsersAdmin();
+  toast('Đã xóa '+username);
+}
+function promptChangeUserPassword(username){
+  const p1=prompt('Mật khẩu mới cho '+username+' (tối thiểu 4 ký tự):');
+  if(p1===null) return;
+  if(p1.length<4){ toast('Mật khẩu tối thiểu 4 ký tự.'); return; }
+  const p2=prompt('Nhập lại mật khẩu mới:');
+  if(p1!==p2){ toast('Hai mật khẩu không khớp.'); return; }
+  const list=getAdminUsers();
+  const i=list.findIndex(x=>x.username===username);
+  if(i<0) return;
+  list[i].password=p1;
+  setAdminUsers(list);
+  toast('Đã đổi mật khẩu cho '+username);
+}
+function changeMyPassword(){
+  const me=currentAdminUsername();
+  const oldPw=document.getElementById('pwOld')?.value||'';
+  const n1=document.getElementById('pwNew')?.value||'';
+  const n2=document.getElementById('pwNew2')?.value||'';
+  const user=findAdminUser(me);
+  if(!user){ toast('Không tìm thấy tài khoản.'); return; }
+  if(user.password!==oldPw){ toast('Mật khẩu hiện tại không đúng.'); return; }
+  if(n1.length<4){ toast('Mật khẩu mới tối thiểu 4 ký tự.'); return; }
+  if(n1!==n2){ toast('Nhập lại mật khẩu không khớp.'); return; }
+  const list=getAdminUsers();
+  const i=list.findIndex(x=>x.username===me);
+  list[i].password=n1;
+  setAdminUsers(list);
+  document.getElementById('pwOld').value='';
+  document.getElementById('pwNew').value='';
+  document.getElementById('pwNew2').value='';
+  toast('Đã đổi mật khẩu thành công.');
+}
+
+
+const KEY_THEME='vista_theme_v1';
+const defaultTheme={
+  navy:'#092238', navy2:'#123c59', gold:'#d8b36a', cream:'#f7f3eb',
+  ink:'#18242d', muted:'#73808a', line:'#e4e8eb', ok:'#2e8b57'
+};
+function getTheme(){
+  try{ return {...defaultTheme, ...JSON.parse(localStorage.getItem(KEY_THEME)||'{}')}; }
+  catch(e){ return {...defaultTheme}; }
+}
+function applyTheme(t){
+  const th=t||getTheme();
+  const root=document.documentElement;
+  root.style.setProperty('--navy', th.navy);
+  root.style.setProperty('--navy2', th.navy2);
+  root.style.setProperty('--gold', th.gold);
+  root.style.setProperty('--cream', th.cream);
+  root.style.setProperty('--ink', th.ink);
+  root.style.setProperty('--muted', th.muted);
+  root.style.setProperty('--line', th.line);
+  root.style.setProperty('--ok', th.ok);
+  root.style.setProperty('--shadow', '0 18px 55px '+th.navy+'18');
+  // meta theme-color
+  const meta=document.querySelector('meta[name="theme-color"]');
+  if(meta) meta.setAttribute('content', th.navy);
+  const prev=document.getElementById('themePreviewSwatches');
+  if(prev){
+    prev.innerHTML=[th.navy,th.navy2,th.gold,th.cream,th.ink,th.muted,th.line,th.ok]
+      .map(c=>`<span style="background:${c}" title="${c}"></span>`).join('');
+  }
+}
+function loadThemeForm(){
+  const th=getTheme();
+  const map={themeNavy:'navy',themeNavy2:'navy2',themeGold:'gold',themeCream:'cream',themeInk:'ink',themeMuted:'muted',themeLine:'line',themeOk:'ok'};
+  Object.entries(map).forEach(([id,key])=>{
+    const el=document.getElementById(id);
+    if(el) el.value=th[key];
+  });
+  applyTheme(th);
+}
+function readThemeForm(){
+  return {
+    navy:document.getElementById('themeNavy')?.value||defaultTheme.navy,
+    navy2:document.getElementById('themeNavy2')?.value||defaultTheme.navy2,
+    gold:document.getElementById('themeGold')?.value||defaultTheme.gold,
+    cream:document.getElementById('themeCream')?.value||defaultTheme.cream,
+    ink:document.getElementById('themeInk')?.value||defaultTheme.ink,
+    muted:document.getElementById('themeMuted')?.value||defaultTheme.muted,
+    line:document.getElementById('themeLine')?.value||defaultTheme.line,
+    ok:document.getElementById('themeOk')?.value||defaultTheme.ok
+  };
+}
+function previewTheme(){ applyTheme(readThemeForm()); }
+function saveTheme(){
+  const th=readThemeForm();
+  localStorage.setItem(KEY_THEME, JSON.stringify(th));
+  applyTheme(th);
+  toast('Đã lưu màu giao diện website.');
+}
+function resetTheme(){
+  localStorage.removeItem(KEY_THEME);
+  loadThemeForm();
+  applyTheme(defaultTheme);
+  toast('Đã khôi phục màu mặc định.');
+}
+
+
+function checkAdminHash(){
+  if(location.hash==='#admin' || location.hash==='#quantri'){
+    if(getCustomerSession && getCustomerSession()){
+      toast('Tài khoản thành viên không có quyền Quản trị.');
+      history.replaceState(null,'',location.pathname+location.search);
+      return;
+    }
+    showAdmin();
+  }
+}
+function init(){ensureOwnerAdmin();renderAdmin();loadPayment();renderHomeReviews();renderHistory();applyTheme();renderUserAuthUI();checkAdminHash();}
+init();
+</script>
+</body>
+</html>
+
+<script>document.addEventListener('DOMContentLoaded',()=>{applyWebsiteName();applyContactInfo();applyGeneralInfo();renderHomeReviews();renderHistory();applyTheme();renderUserAuthUI();checkAdminHash();});</script>
